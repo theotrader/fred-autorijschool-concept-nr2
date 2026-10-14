@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fred Autorijschool — Rijbewijs halen in Epe en omgeving</title>
+<meta name="description" content="Persoonlijke rijopleiding in een Mercedes C-Klasse. Van proefles tot examen — rustig, geduldig en op jouw tempo.">
+
+<!--
+  ═══════════════════════════════════════════════════════════════════
+  CONTENT — CHECK & VERVANG tegen fredautorijschool.nl
+  ═══════════════════════════════════════════════════════════════════
+
+  TELEFOON        → 06 – 24 68 10 12            CHECK
+  E-MAIL          → info@fredautorijschool.nl   CHECK
+  LESGEBIED       → Epe en omgeving             CHECK
+  PROEFLES        → € 25,– (verrekening bij pakket)  CHECK
+  LOSSE LES       → € 39,50 per les (60 min)    CHECK
+  PAKKET START    → 12 lessen + examen — € 995      CHECK
+  PAKKET COMPLEET → 20 lessen + toets + examen — € 1.595 CHECK
+  PAKKET INTENSIEF→ 30 lessen + toets + examen — € 2.295 CHECK
+  REVIEWS         → sectie "Over Fred"          CHECK (vervang door echte quotes)
+  AUTO            → Mercedes C-Klasse           ✓ zoals op de echte site
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0c0f; --panel:#12141a;
+  --ink:#f2f3f6; --mut:#9aa0ab; --line:rgba(255,255,255,.09);
+  --amber:#ffb020; --amber-2:#ffc24d; --amber-ink:#181004;
+  --err:#ff5d5d;
+  --fh:'Barlow Condensed',sans-serif; --fb:'Barlow',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--fb);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+::selection{background:var(--amber);color:var(--amber-ink)}
+.skip{position:fixed;top:-60px;left:16px;z-index:99;background:var(--amber);
+  color:var(--amber-ink);padding:10px 18px;font:600 14px var(--fh);
+  letter-spacing:.1em;text-transform:uppercase;transition:top .2s}
+.skip:focus{top:12px}
+#stage{position:fixed;inset:0;z-index:0;display:block;opacity:0;transition:opacity .7s ease}
+#stage.ready{opacity:1}
+body.no-webgl #stage{display:none}
+body.no-webgl{background:
+  repeating-linear-gradient(0deg,#0b0c0f 0px,#0b0c0f 90px,#101116 90px,#101116 92px)}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,5vw,56px)}
+main{position:relative;z-index:1}
+section{position:relative;padding-block:clamp(90px,16vh,180px)}
+.sec-label{font:600 13px/1 var(--fh);letter-spacing:.34em;text-transform:uppercase;
+  color:var(--mut);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sec-label b{color:var(--amber);font-weight:700}
+.sec-label::after{content:"";height:1px;width:56px;background:var(--line)}
+h1,h2,h3{font-family:var(--fh);font-weight:700;line-height:.98;
+  text-transform:uppercase;letter-spacing:.01em}
+h2{font-size:clamp(38px,6vw,74px);max-width:12ch}
+.lead{color:var(--mut);font-size:clamp(16px,1.4vw,18px);max-width:46ch;margin-top:22px}
+.side-l{max-width:560px;margin-right:auto}
+.side-r{max-width:560px;margin-left:auto}
+.panel{background:rgba(13,15,20,.72);border:1px solid var(--line);
+  border-radius:6px;padding:clamp(24px,3vw,40px)}
+.btn{display:inline-flex;align-items:center;gap:12px;
+  font:700 16px/1 var(--fh);letter-spacing:.14em;text-transform:uppercase;
+  padding:17px 28px;border-radius:3px;transition:background .18s,border-color .18s,transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:18px;height:18px;transition:transform .22s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--amber);color:var(--amber-ink)}
+.btn-primary:hover{background:var(--amber-2)}
+.btn-ghost{border:1px solid rgba(255,255,255,.24)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:70px;
+  display:flex;align-items:center;border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s}
+nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-filter:blur(10px)}
+.nav-in{width:100%;max-width:1320px;margin-inline:auto;
+  padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:11px}
+.l-badge{width:27px;height:27px;background:var(--amber);color:var(--amber-ink);
+  border-radius:4px;display:grid;place-items:center;font:700 16px/1 var(--fh)}
+.brand-name{font:700 23px/1 var(--fh);letter-spacing:.03em}
+.brand-sub{font:600 10px/1 var(--fh);letter-spacing:.36em;color:var(--mut);
+  display:block;margin-top:2px}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-links a{font:600 13px/1 var(--fh);letter-spacing:.18em;text-transform:uppercase;
+  padding:10px 13px;color:var(--mut);border-radius:3px;position:relative;transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--amber)}
+.nav-links a.active::after{content:"";position:absolute;left:13px;right:13px;
+  bottom:2px;height:2px;background:var(--amber)}
+.nav-cta{margin-left:8px;padding:12px 20px}
+#menuBtn{display:none;margin-left:auto;width:44px;height:44px;
+  align-items:center;justify-content:center}
+#menuBtn svg{width:24px;height:24px}
+#mobileNav{position:fixed;inset:0;z-index:30;background:rgba(9,10,13,.97);
+  display:none;flex-direction:column;justify-content:center;padding:0 32px;gap:6px}
+#mobileNav.open{display:flex}
+#mobileNav a{font:700 34px/1 var(--fh);text-transform:uppercase;letter-spacing:.04em;
+  padding:12px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center}
+#mobileNav a span{color:var(--amber);font-size:14px;letter-spacing:.2em}
+#mobileNav .btn{margin-top:26px;justify-content:center}
+#closeMenu{position:absolute;top:18px;right:20px;width:44px;height:44px;
+  display:grid;place-items:center}
+#closeMenu svg{width:26px;height:26px}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+#hero h1{font-size:clamp(52px,8.5vw,118px);max-width:9ch}
+#hero .lead{font-size:clamp(17px,1.6vw,20px)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+.scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font:600 11px/1 var(--fh);letter-spacing:.4em;color:var(--mut);text-transform:uppercase}
+.scroll-hint::after{content:"";width:1px;height:44px;
+  background:repeating-linear-gradient(180deg,var(--mut) 0 5px,transparent 5px 10px)}
+#kruispunt{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.kp-in{width:100%;max-width:960px;margin-inline:auto;text-align:center}
+.kp-in h2{margin-inline:auto}
+.choices{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:44px}
+.choice{border:1px solid var(--line);background:rgba(13,15,20,.78);
+  border-radius:6px;padding:26px 30px;width:min(420px,100%);text-align:left;
+  display:flex;align-items:center;gap:22px;transition:border-color .2s,transform .25s}
+.choice svg{width:34px;height:34px;flex:none;color:var(--mut);transition:color .2s}
+.choice strong{display:block;font:700 26px/1 var(--fh);text-transform:uppercase;letter-spacing:.03em}
+.choice small{color:var(--mut);font-size:14px}
+.choice:hover,.choice:focus-visible{border-color:var(--amber);transform:translateY(-3px)}
+.choice:hover svg{color:var(--amber)}
+.choice.go-l:hover{transform:translateX(-6px)}
+.choice.go-r:hover{transform:translateX(6px)}
+.kp-note{margin-top:30px;font-size:13.5px;color:var(--mut)}
+#proefles{min-height:120vh;display:flex;align-items:center}
+.price-tag{display:inline-flex;align-items:baseline;gap:10px;margin-top:28px;
+  border-left:3px solid var(--amber);padding-left:16px}
+.price-tag b{font:700 34px/1 var(--fh)}
+.price-tag span{color:var(--mut);font-size:14px}
+.route{margin-top:44px;position:relative;padding-left:58px;
+  border-left:1px dashed rgba(255,255,255,.22);max-width:600px}
+.milestone{position:relative;padding:16px 0 40px}
+.m-badge{position:absolute;left:-58px;top:14px;width:44px;height:44px;
+  border:1px solid var(--amber);border-radius:5px;background:var(--bg);
+  display:grid;place-items:center;font:700 17px/1 var(--fh);color:var(--amber);
+  transform:translateX(-22.5px)}
+.milestone h3{font-size:26px;margin-bottom:8px}
+.milestone p{color:var(--mut);max-width:46ch}
+.route-note{margin-top:8px;color:var(--mut);font-size:14.5px;
+  display:flex;align-items:center;gap:10px}
+.route-note svg{width:17px;height:17px;color:var(--amber);flex:none}
+.pack-top{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;
+  justify-content:space-between;margin-bottom:44px}
+.pack-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}
+.pack{border:1px solid var(--line);background:rgba(14,16,21,.82);
+  border-radius:8px;padding:clamp(24px,2.6vw,36px);position:relative;
+  transition:border-color .25s,transform .25s}
+.pack:hover{border-color:rgba(255,176,32,.5);transform:translateY(-4px)}
+.pack.featured{grid-row:span 2;border-color:rgba(255,176,32,.55);display:flex;flex-direction:column}
+.tag{position:absolute;top:22px;right:22px;background:var(--amber);
+  color:var(--amber-ink);font:700 11px/1 var(--fh);letter-spacing:.2em;
+  padding:7px 11px;border-radius:2px}
+.meter{width:118px;margin-bottom:18px}
+.meter path.arc{stroke:rgba(255,255,255,.14)}
+.meter path.ticks{stroke:rgba(255,255,255,.28)}
+.needle{transform:rotate(-76deg);transform-origin:60px 62px;
+  transition:transform 1.3s cubic-bezier(.2,.85,.25,1)}
+.pack.lit .needle{transform:rotate(var(--a))}
+.pack h3{font-size:clamp(28px,2.4vw,36px)}
+.pack .p-price{font:700 52px/1 var(--fh);margin:16px 0 4px}
+.pack .p-price small{font-size:16px;color:var(--mut);font-weight:600;letter-spacing:.06em}
+.pack ul{list-style:none;margin:22px 0 28px;flex:1}
+.pack li{display:flex;gap:12px;padding:9px 0;color:#c9ccd3;font-size:15px;
+  border-bottom:1px solid rgba(255,255,255,.05)}
+.pack li svg{width:17px;height:17px;color:var(--amber);flex:none;margin-top:4px}
+.pack .btn{width:100%;justify-content:center}
+.los{margin-top:22px;color:var(--mut);font-size:14.5px;display:flex;align-items:center;gap:10px}
+.los b{color:var(--ink)}
+.los svg{width:16px;height:16px;color:var(--amber)}
+#overfred .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);margin-top:20px}
+.fred-card{align-self:start}
+.fred-card .fc-top{display:flex;align-items:center;gap:18px;margin-bottom:20px}
+.fc-badge{width:64px;height:64px;border:1px solid var(--amber);border-radius:8px;
+  display:grid;place-items:center;font:700 34px/1 var(--fh);color:var(--amber)}
+.fred-card h3{font-size:30px}
+.fred-card .fc-sub{font:600 12px/1.4 var(--fh);letter-spacing:.24em;
+  color:var(--mut);text-transform:uppercase}
+.fred-card p{color:#c4c7ce}
+.quotes{margin-top:34px;display:grid;gap:16px}
+.quote{border-left:3px solid var(--amber);padding:4px 0 4px 18px;color:#c4c7ce}
+.quote em{font-style:normal;display:block;font-size:16.5px}
+.quote small{color:var(--mut);display:block;margin-top:6px;font-size:13px}
+.fact{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.fact svg{width:22px;height:22px;color:var(--amber);flex:none;margin-top:3px}
+.fact h4{font:700 19px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+.fact p{color:var(--mut);font-size:15px;max-width:44ch}
+#contact .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,64px);margin-top:30px}
+.field{margin-bottom:18px}
+.field label{display:block;font:600 12px/1 var(--fh);letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mut);margin-bottom:9px}
+.field input,.field select,.field textarea{width:100%;background:#0e1016;
+  border:1px solid var(--line);border-radius:3px;color:var(--ink);
+  padding:14px 16px;font:400 16px var(--fb);transition:border-color .15s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+.field.error input{border-color:var(--err)}
+.field .msg{display:none;color:var(--err);font-size:13px;margin-top:7px}
+.field.error .msg{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-success{display:none;padding:44px 34px;text-align:center}
+.form-success.show{display:block}
+.form-success svg{width:52px;height:52px;color:var(--amber);margin-bottom:18px}
+.form-success h3{font-size:28px;margin-bottom:10px}
+.form-success p{color:var(--mut)}
+.c-item{padding:22px 0;border-bottom:1px solid var(--line);display:flex;gap:18px}
+.c-item svg{width:22px;height:22px;color:var(--amber);flex:none;margin-top:4px}
+.c-item h4{font:700 15px/1 var(--fh);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mut);margin-bottom:7px}
+.c-item a{border-bottom:1px solid rgba(255,176,32,.4)}
+.c-item a:hover{color:var(--amber);border-color:var(--amber)}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);
+  padding:44px 0 40px;background:rgba(11,12,15,.6)}
+.foot-in{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:22px;font:600 12px/1 var(--fh);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.foot-links a:hover{color:var(--amber)}
+.foot-c{color:var(--mut);font-size:13px}
+#hud{position:fixed;left:22px;bottom:22px;z-index:5;border-left:2px solid var(--amber);
+  padding:10px 18px 10px 16px;background:rgba(11,12,15,.62);border-radius:0 4px 4px 0;
+  font-family:var(--fh);user-select:none;pointer-events:none;opacity:0;transition:opacity .5s}
+#hud.on{opacity:1}
+.hud-row1{display:flex;align-items:baseline;gap:8px}
+#hudSpeed{font:700 40px/1 var(--fh);font-variant-numeric:tabular-nums;min-width:64px}
+.hud-row1 small{font:600 12px/1 var(--fh);letter-spacing:.2em;color:var(--mut)}
+.hud-row2{display:flex;gap:14px;font:600 11px/1 var(--fh);letter-spacing:.24em;
+  color:var(--mut);text-transform:uppercase;margin-top:4px}
+#hudGear{color:var(--amber)}
+body.no-webgl #hud{display:none}
+#toast{position:fixed;right:22px;bottom:22px;z-index:40;background:var(--panel);
+  border:1px solid var(--line);border-left:3px solid var(--amber);
+  padding:16px 22px;border-radius:4px;font-size:15px;transform:translateY(20px);
+  opacity:0;pointer-events:none;transition:transform .35s,opacity .35s;max-width:min(380px,86vw)}
+#toast.show{transform:none;opacity:1}
+@media(max-width:980px){
+  .nav-links,.nav-cta{display:none}
+  #menuBtn{display:flex}
+  #overfred .grid,#contact .grid{grid-template-columns:1fr}
+  .pack-grid{grid-template-columns:1fr}
+  .pack.featured{grid-row:auto}
+  #hero h1{max-width:11ch}
+}
+@media(max-width:560px){
+  .form-row{grid-template-columns:1fr}
+  #hud{left:14px;bottom:14px;padding:8px 14px 8px 12px}
+  #hudSpeed{font-size:30px;min-width:48px}
+  .scroll-hint{display:none}
+  .side-l,.side-r{margin-inline:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#proefles">Direct naar inhoud</a>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<nav id="nav" aria-label="Hoofdnavigatie">
+  <div class="nav-in">
+    <a href="#hero" class="brand" data-scroll>
+      <span class="l-badge" aria-hidden="true">L</span>
+      <span><span class="brand-name">FRED</span>
+      <span class="brand-sub">AUTORIJSCHOOL</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#rijopleiding" data-scroll data-nav="rijopleiding">Rijopleiding</a>
+      <a href="#pakketten" data-scroll data-nav="pakketten">Pakketten</a>
+      <a href="#proefles" data-scroll data-nav="proefles">Proefles</a>
+      <a href="#overfred" data-scroll data-nav="overfred">Over Fred</a>
+      <a href="#contact" data-scroll data-nav="contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-primary nav-cta" data-scroll data-preset="Proefles">Proefles
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button id="menuBtn" aria-label="Menu openen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobileNav" aria-label="Mobiel menu">
+  <button id="closeMenu" aria-label="Menu sluiten">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg>
+  </button>
+  <a href="#proefles" data-scroll><span>01</span>Proefles</a>
+  <a href="#rijopleiding" data-scroll><span>02</span>Rijopleiding</a>
+  <a href="#pakketten" data-scroll><span>03</span>Pakketten</a>
+  <a href="#overfred" data-scroll><span>04</span>Over Fred</a>
+  <a href="#contact" data-scroll><span>05</span>Contact</a>
+  <a href="#contact" class="btn btn-primary" data-scroll data-preset="Proefles">Plan je proefles
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<main id="inhoud">
+
+  <section id="hero">
+    <div class="wrap">
+      <div class="side-l">
+        <div class="sec-label"><b>EPE</b> EN OMGAVING — RIJBWIJS B</div>
+        <h1>Klaar om je rijbewijs te halen?</h1>
+        <p class="lead">Bij Fred Autorijschool leer je rijden in een Mercedes C-Klasse — rustig,
+        persoonlijk en op jouw tempo. Van je eerste meters tot het examen.</p>
+        <div class="hero-ctas">
+          <button id="startRit" class="btn btn-primary">Start je rit
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a href="#pakketten" class="btn btn-ghost" data-scroll>Bekijk pakketten</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">Scroll = rijden</div>
+  </section>
+
+  <section id="kruispunt">
+    <div class="kp-in wrap">
+      <div class="sec-label" style="justify-content:center"><b>KRUISPUNT</b></div>
+      <h2>Kies je route</h2>
+      <div class="choices">
+        <button class="choice go-l" id="keuzeProefles">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span><strong>Proefles</strong><small>Eerst kennismaken achter het stuur</small></span>
+        </button>
+        <button class="choice go-r" id="keuzeDoor">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span><strong>Doorrijden</strong><small>Alles over de rijopleiding</small></span>
+        </button>
+      </div>
+      <p class="kp-note">Twijfel je? Met de navigatie bovenaan ben je altijd binnen één klik waar je wezen moet.</p>
+    </div>
+  </section>
+
+  <section id="proefles">
+    <div class="wrap">
+      <div class="side-l panel">
+        <div class="sec-label"><b>01</b> PROEFLES</div>
+        <h2>Eerst even kennis­maken achter het stuur</h2>
+        <p class="lead">In de proefles maak je kennis met Fred en de Mercedes C-Klasse. Je stapt in,
+        rijdt je eerste meters en merkt meteen of het klikt. Daarna beslis je zelf
+        of je verder gaat — geen verplichting.</p>
+        <div class="price-tag"><b>€ 25,–</b><span>proefles · verrekening bij een pakket</span></div>
+        <div style="margin-top:34px">
+          <a href="#contact" class="btn btn-primary" data-scroll data-preset="Proefles">Plan je proefles
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rijopleiding">
+    <div class="wrap">
+      <div class="side-r">
+        <div class="sec-label"><b>02</b> RIJOPLEIDING</div>
+        <h2>Van eerste gas tot examen</h2>
+        <p class="lead">Iedereen start op een ander niveau. Daarom bepaal jij het tempo —
+        en sturen we de opleiding bij waar jij groeit.</p>
+        <div class="route">
+          <div class="milestone"><span class="m-badge">1</span>
+            <h3>Starten</h3>
+            <p>Nog nooit gereden? Dan oefenen we eerst in een rustige omgeving, dicht bij huis.</p>
+          </div>
+          <div class="milestone"><span class="m-badge">2</span>
+            <h3>Opbouwen</h3>
+            <p>Gaat het steeds makkelijker? Dan verbreden we de route: van dorpswegen tot de snelweg.</p>
+          </div>
+          <div class="milestone"><span class="m-badge">3</span>
+            <h3>Toetsen</h3>
+            <p>Met een tussentijdse toets oefen je het examen en weet je precies waar je staat.</p>
+          </div>
+          <div class="milestone"><span class="m-badge">4</span>
+            <h3>Examen</h3>
+            <p>Goed voorbereid naar het CBR — kalm, vertrouwd en in een auto die je kent.</p>
+          </div>
+        </div>
+        <p class="route-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Lessen van 60 minuten. Tijden in overleg — ook ’s avonds en in het weekend.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pakketten">
+    <div class="wrap">
+      <div class="pack-top">
+        <div>
+          <div class="sec-label"><b>03</b> PAKKETTEN &amp; PRIJZEN</div>
+          <h2>Kies jouw pakket</h2>
+        </div>
+        <p class="los">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Liever los? <b>Losse les € 39,50</b>&nbsp;per uur (60 min)
+        </p>
+      </div>
+      <div class="pack-grid">
+
+        <article class="pack featured" data-pack="Compleet">
+          <span class="tag">Meest gekozen</span>
+          <svg class="meter" viewBox="0 0 120 70" aria-hidden="true">
+            <path class="arc" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="2"/>
+            <path class="ticks" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="8" stroke-dasharray="1.5 12.6"/>
+            <g class="needle" style="--a:6deg"><rect x="58.6" y="22" width="2.8" height="40" rx="1.4" fill="#ffb020"/></g>
+            <circle cx="60" cy="62" r="5" fill="#ffb020"/>
+          </svg>
+          <h3>Compleet</h3>
+          <div class="p-price">€ 1.595<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>20 rijlessen van 60 minuten</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Tussentijdse toets als examen-oefening</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Praktijkexamen CBR, met de lesauto</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Vaste instructeur, van start tot examen</li>
+          </ul>
+          <button class="btn btn-primary" data-choose="Compleet">Kies compleet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </article>
+
+        <article class="pack" data-pack="Start">
+          <span class="tag" style="background:transparent;border:1px solid var(--line);color:var(--mut)">Basis</span>
+          <svg class="meter" viewBox="0 0 120 70" aria-hidden="true">
+            <path class="arc" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="2"/>
+            <path class="ticks" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="8" stroke-dasharray="1.5 12.6"/>
+            <g class="needle" style="--a:-38deg"><rect x="58.6" y="22" width="2.8" height="40" rx="1.4" fill="#ffb020"/></g>
+            <circle cx="60" cy="62" r="5" fill="#ffb020"/>
+          </svg>
+          <h3>Start</h3>
+          <div class="p-price">€ 995<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>12 rijlessen van 60 minuten</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Praktijkexamen CBR, met de lesauto</li>
+          </ul>
+          <button class="btn btn-ghost" data-choose="Start">Kies start</button>
+        </article>
+
+        <article class="pack" data-pack="Intensief">
+          <span class="tag" style="background:transparent;border:1px solid var(--line);color:var(--mut)">Snel</span>
+          <svg class="meter" viewBox="0 0 120 70" aria-hidden="true">
+            <path class="arc" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="2"/>
+            <path class="ticks" d="M12 62 A48 48 0 0 1 108 62" fill="none" stroke-width="8" stroke-dasharray="1.5 12.6"/>
+            <g class="needle" style="--a:42deg"><rect x="58.6" y="22" width="2.8" height="40" rx="1.4" fill="#ffb020"/></g>
+            <circle cx="60" cy="62" r="5" fill="#ffb020"/>
+          </svg>
+          <h3>Intensief</h3>
+          <div class="p-price">€ 2.295<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>30 rijlessen van 60 minuten</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Tussentijdse toets + examen CBR</li>
+          </ul>
+          <button class="btn btn-ghost" data-choose="Intensief">Kies intensief</button>
+        </article>
+
+      </div>
+      <p class="los" style="margin-top:26px">Prijzen incl. btw. Exacte invulling en mogelijkheden altijd in overleg.</p>
+    </div>
+  </section>
+
+  <section id="overfred">
+    <div class="wrap">
+      <div class="sec-label"><b>04</b> OVER FRED</div>
+      <h2>Eén naam, één instructeur</h2>
+      <div class="grid">
+        <div class="fred-card panel">
+          <div class="fc-top">
+            <span class="fc-badge">F</span>
+            <div><h3>Fred</h3>
+            <span class="fc-sub">Instructeur &amp; eigenaar</span></div>
+          </div>
+          <p>Geen rijschool met wisselende instructeurs, maar één vaste naam.
+          Fred rijdt zelf met je mee — van je eerste meters tot het moment
+          dat je examen haalt.</p>
+          <div class="quotes">
+            <div class="quote"><em>“Rustig, duidelijk en altijd met geduld —
+            precies wat ik nodig had.”</em><small>Voormalig leerling</small></div>
+            <div class="quote"><em>“Het vertrouwen in het verkeer kwam sneller
+            dan ik dacht.”</em><small>Voormalig leerling</small></div>
+          </div>
+        </div>
+        <div>
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z"/></svg>
+            <div><h4>Persoonlijke aanpak</h4>
+            <p>Rustig en geduldig. Zenuwachtig bij je eerste keer? Dat is normaal — er wordt rekening mee gehouden.</p></div>
+          </div>
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 16l1.5-5.5h11L19 16M5 16h14M7 16v2M17 16v2"/><circle cx="8.5" cy="8" r="1.6"/><circle cx="15.5" cy="8" r="1.6"/></svg>
+            <div><h4>Les in een Mercedes C-Klasse</h4>
+            <p>Comfortabel en modern leren rijden — in een auto waar je je meteen veilig in voelt.</p></div>
+          </div>
+          <div class="fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            <div><h4>Lesgebied</h4>
+            <p>Van huis weg oefenen in Epe en omgeving, later de bredere regio en examenroutes.</p></div>
+          </div>
+          <div class="fact" style="border-bottom:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><h4>Flexibel plannen</h4>
+            <p>Lestijden in overleg — ook ’s avonds en in het weekend, naast school of werk.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-label"><b>05</b> BESTEMMING</div>
+      <h2>Aangekomen. Tijd om in te stappen.</h2>
+      <div class="grid">
+        <div class="panel">
+          <form id="proeflesForm" novalidate>
+            <div class="form-row">
+              <div class="field" id="f-naam">
+                <label for="in-naam">Naam</label>
+                <input id="in-naam" type="text" autocomplete="name" placeholder="Jouw naam">
+                <span class="msg">Vul je naam in.</span>
+              </div>
+              <div class="field" id="f-tel">
+                <label for="in-tel">Telefoon</label>
+                <input id="in-tel" type="tel" autocomplete="tel" placeholder="06 –">
+                <span class="msg">Telefoon of e-mail invullen.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field" id="f-mail">
+                <label for="in-mail">E-mail</label>
+                <input id="in-mail" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl">
+                <span class="msg">Telefoon of e-mail invullen.</span>
+              </div>
+              <div class="field">
+                <label for="in-keuze">Interesse</label>
+                <select id="in-keuze">
+                  <option>Proefles</option>
+                  <option>Start</option>
+                  <option>Compleet</option>
+                  <option>Intensief</option>
+                  <option>Nog onduidelijk</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="in-bericht">Bericht <span style="text-transform:none;letter-spacing:0">(optioneel)</span></label>
+              <textarea id="in-bericht" placeholder="Bijvoorbeeld: je voorkeur voor lestijden of een vraag."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              Verstuur aanvraag
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.5 3.5L17 9"/></svg>
+            <h3>Aanvraag ontvangen</h3>
+            <p>Fred neemt zo snel mogelijk contact met je op.</p>
+            <button class="btn btn-ghost" id="opnieuw" style="margin-top:24px">Nieuwe aanvraag</button>
+          </div>
+        </div>
+        <div>
+          <div class="c-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <div><h4>Telefoon</h4><a href="tel:+31624681012">06 – 24 68 10 12</a></div>
+          </div>
+          <div class="c-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><h4>E-mail</h4><a href="mailto:info@fredautorijschool.nl">info@fredautorijschool.nl</a></div>
+          </div>
+          <div class="c-item" style="border-bottom:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            <div><h4>Lesgebied</h4><p>Epe en omgeving</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a href="#hero" class="brand" data-scroll>
+      <span class="l-badge" aria-hidden="true">L</span>
+      <span><span class="brand-name">FRED</span>
+      <span class="brand-sub">AUTORIJSCHOOL</span></span>
+    </a>
+    <div class="foot-links">
+      <a href="#proefles" data-scroll>Proefles</a>
+      <a href="#pakketten" data-scroll>Pakketten</a>
+      <a href="#overfred" data-scroll>Over Fred</a>
+      <a href="#contact" data-scroll>Contact</a>
+    </div>
+    <div class="foot-c">© 2026 Fred Autorijschool — Rijopleidingen in Epe en omgeving</div>
+  </div>
+</footer>
+
+<div id="hud" aria-hidden="true">
+  <div class="hud-row1"><span id="hudSpeed">0</span><small>KM/U</small></div>
+  <div class="hud-row2"><span id="hudGear">P</span><span id="hudState">Geparkeerd</span><span id="hudSec">—</span></div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = () => innerWidth < 720;
+
+/* ═════════ UI ═════════ */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+const mobileNav = document.getElementById('mobileNav');
+document.getElementById('menuBtn').onclick = () => mobileNav.classList.add('open');
+document.getElementById('closeMenu').onclick = () => mobileNav.classList.remove('open');
+
+let toastT;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3600);
+}
+function goTo(sel){
+  if (RM){ document.querySelector(sel).scrollIntoView(); return; }
+  gsap.to(window, {scrollTo:sel, duration:1.4, ease:'power2.inOut', overwrite:true});
+}
+document.querySelectorAll('[data-scroll]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    mobileNav.classList.remove('open');
+    if (el.dataset.preset) document.getElementById('in-keuze').value = el.dataset.preset;
+    goTo(el.getAttribute('href'));
+  });
+});
+
+const form = document.getElementById('proeflesForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const naam = document.getElementById('in-naam');
+  const tel  = document.getElementById('in-tel');
+  const mail = document.getElementById('in-mail');
+  const okNaam = naam.value.trim().length > 1;
+  const okTel  = tel.value.trim().length > 5;
+  const okMail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail.value.trim());
+  document.getElementById('f-naam').classList.toggle('error', !okNaam);
+  document.getElementById('f-tel').classList.toggle('error', !okTel && !okMail);
+  document.getElementById('f-mail').classList.toggle('error', !okTel && !okMail);
+  if (!(okNaam && (okTel || okMail))) return;
+  form.style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+  toast('Aanvraag verzonden — Fred neemt contact met je op.');
+});
+document.getElementById('opnieuw').onclick = () => {
+  form.reset(); form.style.display = '';
+  document.getElementById('formSuccess').classList.remove('show');
+};
+document.querySelectorAll('[data-choose]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('in-keuze').value = btn.dataset.choose;
+    toast('Pakket ' + btn.dataset.choose + ' geselecteerd.');
+    goTo('#contact');
+  });
+});
+
+if (!RM){
+  gsap.utils.toArray('section .wrap, #kruispunt .kp-in').forEach(el => {
+    gsap.from(el, {y:44, opacity:0, duration:1, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 88%'}});
+  });
+}
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('lit');
+}), {threshold:.4});
+document.querySelectorAll('.pack').forEach(p => io.observe(p));
+
+const navMap = {};
+document.querySelectorAll('[data-nav]').forEach(a => navMap[a.dataset.nav] = a);
+let curSection = 'hero';
+['proefles','rijopleiding','pakketten','overfred','contact'].forEach(id => {
+  ScrollTrigger.create({trigger:'#'+id, start:'top 45%', end:'bottom 45%',
+    onToggle(self){
+      if (self.isActive){
+        Object.values(navMap).forEach(a => a.classList.remove('active'));
+        if (navMap[id]) navMap[id].classList.add('active');
+        curSection = id;
+      }
+    }});
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   3D — RIT DOOR EEN WERELD · netjes rechts · geveerde voortgang
+   ═══════════════════════════════════════════════════════════════ */
+let three = null;
+const state = {
+  started:false, speed:0, sv:0, accelS:0, boost:0, brakeT:0,
+  lastY:scrollY, headOn:false, headLevel:0, turnDir:0, turnUntil:0,
+  yawKick:0, steerS:0, camInit:false,
+  /* DE fix: uS = geveerde route-voortgang. scrollY is alleen het
+     DOEL; de auto glijdt er met een veer naartoe, zoals versie 1. */
+  uS:0, uPrev:0,
+  camPos:new THREE.Vector3(), camLook:new THREE.Vector3(),
+  mouseX:0, mouseY:0, lastPointer:0, t:0
+};
+
+const LANE_OFF = 2.05;
+
+function initThree(){
+  const canvas = document.getElementById('stage');
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
+  } catch(err){ document.body.classList.add('no-webgl'); return null; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, isMobile() ? 1.25 : 1.5));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.2;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0a0c0e);
+  scene.fog = new THREE.Fog(0x0a0c0e, 16, 68);
+
+  const camera = new THREE.PerspectiveCamera(isMobile() ? 56 : 42,
+    innerWidth/innerHeight, .1, 220);
+  camera.position.set(-9, 2.6, 4);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const envScene = new THREE.Scene();
+  const panel = (w,h,rgb,pos,rot) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w,h),
+      new THREE.MeshBasicMaterial({color:new THREE.Color().setRGB(...rgb), side:THREE.DoubleSide}));
+    m.position.set(...pos); m.rotation.set(...rot); envScene.add(m);
+  };
+  panel(20,11,[6,6,6.5],[0,11,0],[Math.PI/2,0,0]);
+  panel(14,2.2,[8,3.4,.5],[-12,2.6,3],[0,Math.PI/3,0]);
+  panel(12,2.2,[8,3.4,.5],[12,2.6,-3],[0,-Math.PI/3,0]);
+  panel(10,6,[1,1.2,1.7],[10,5,-9],[0,-.8,0]);
+  panel(9,3,[1.5,1.5,1.6],[0,2,12],[0,Math.PI,0]);
+  scene.environment = pmrem.fromScene(envScene, .02).texture;
+
+  scene.add(new THREE.HemisphereLight(0x2e313c, 0x0a0c0a, .55));
+  const key = new THREE.DirectionalLight(0xffffff, .7); key.position.set(30,40,20); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xdfe6ee, .35); rim.position.set(-30,20,-30); scene.add(rim);
+
+  const tex = (w,h,draw) => {
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    draw(c.getContext('2d'));
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+    return t;
+  };
+
+  /* ══ DE ROUTE ══ */
+  const routePts = [
+    [0,0],[30,0],[52,10],[64,32],[60,58],[42,74],[16,78],[-8,70],
+    [-20,48],[-16,24],[-2,8],[18,12],[36,24],[42,44],[30,60],[10,64]
+  ].map(p => new THREE.Vector3(p[0], 0, p[1]));
+  const curve = new THREE.CatmullRomCurve3(routePts, false, 'catmullrom', .5);
+  const LEN = curve.getLength();
+
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(260, 40),
+    new THREE.MeshStandardMaterial({color:0x0a0e0a, roughness:1}));
+  ground.rotation.x = -Math.PI/2; ground.position.y = -.03; scene.add(ground);
+
+  const skyTex = tex(16,256,ctx => {
+    const g = ctx.createLinearGradient(0,0,0,256);
+    g.addColorStop(0,'#08090c'); g.addColorStop(.6,'#0a0c0e');
+    g.addColorStop(.85,'#12131a'); g.addColorStop(1,'#15130f');
+    ctx.fillStyle = g; ctx.fillRect(0,0,16,256);
+  });
+  const sky = new THREE.Mesh(new THREE.CylinderGeometry(150,150,90,24,1,true),
+    new THREE.MeshBasicMaterial({map:skyTex, side:THREE.BackSide, fog:false}));
+  sky.position.y = 30; scene.add(sky);
+
+  const asphaltTex = tex(256,256,ctx => {
+    ctx.fillStyle = '#12141a'; ctx.fillRect(0,0,256,256);
+    for (let i=0;i<2200;i++){
+      const v = Math.random();
+      ctx.fillStyle = v < .5
+        ? 'rgba(255,255,255,'+(.02+Math.random()*.05)+')'
+        : 'rgba(0,0,0,'+(.06+Math.random()*.14)+')';
+      ctx.fillRect(Math.random()*256, Math.random()*256, 1.5, 1.5);
+    }
+  });
+  asphaltTex.wrapS = asphaltTex.wrapT = THREE.RepeatWrapping;
+
+  const _p = new THREE.Vector3(), _t = new THREE.Vector3(), _n = new THREE.Vector3();
+  function ribbon(halfW, offset, y, mat, uvLen){
+    const SEG = 700;
+    const pos = new Float32Array((SEG+1)*2*3);
+    const uv  = new Float32Array((SEG+1)*2*2);
+    const nor = new Float32Array((SEG+1)*2*3);
+    const idx = [];
+    for (let i=0;i<=SEG;i++){
+      const u = i/SEG;
+      curve.getPointAt(u,_p); curve.getTangentAt(u,_t);
+      _n.set(-_t.z,0,_t.x);
+      const cx = _p.x + _n.x*offset, cz = _p.z + _n.z*offset;
+      const o = i*6;
+      pos[o]   = cx + _n.x*halfW; pos[o+1] = y; pos[o+2] = cz + _n.z*halfW;
+      pos[o+3] = cx - _n.x*halfW; pos[o+4] = y; pos[o+5] = cz - _n.z*halfW;
+      nor[o]=0; nor[o+1]=1; nor[o+2]=0; nor[o+3]=0; nor[o+4]=1; nor[o+5]=0;
+      uv[i*4] = u*uvLen; uv[i*4+1] = 0;
+      uv[i*4+2] = u*uvLen; uv[i*4+3] = 1;
+      if (i<SEG){
+        const a=i*2, b=i*2+1, c=(i+1)*2, d=(i+1)*2+1;
+        idx.push(a,b,c, b,d,c);
+      }
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    g.setAttribute('normal', new THREE.BufferAttribute(nor,3));
+    g.setAttribute('uv', new THREE.BufferAttribute(uv,2));
+    g.setIndex(idx);
+    const m = new THREE.Mesh(g, mat);
+    scene.add(m); return m;
+  }
+
+  const roadMat = new THREE.MeshStandardMaterial({map:asphaltTex.clone(),
+    color:0xc4c7cd, roughness:.3, metalness:.3, envMapIntensity:.8, side:THREE.DoubleSide});
+  roadMat.map.repeat.set(1,1); roadMat.map.wrapT = THREE.RepeatWrapping;
+  ribbon(4.2, 0, .01, roadMat, Math.round(LEN/4));
+  const lineMat = new THREE.MeshBasicMaterial({color:0x6a6e76, side:THREE.DoubleSide});
+  ribbon(.06, 4.05, .02, lineMat, 1);
+  ribbon(.06,-4.05, .02, lineMat, 1);
+  const walkMat = new THREE.MeshStandardMaterial({color:0x16181c,
+    roughness:.9, side:THREE.DoubleSide});
+  ribbon(.95, 5.5, .05, walkMat, 1);
+  ribbon(.95,-5.5, .05, walkMat, 1);
+
+  const dashMat = new THREE.MeshBasicMaterial({color:0xc9ccd2});
+  for (let d=3; d<LEN-3; d+=4.8){
+    const u = d/LEN;
+    curve.getPointAt(u,_p); curve.getTangentAt(u,_t);
+    const dash = new THREE.Mesh(new THREE.BoxGeometry(2,.022,.16), dashMat);
+    dash.position.set(_p.x,.02,_p.z);
+    dash.rotation.y = Math.atan2(-_t.z,_t.x);
+    scene.add(dash);
+  }
+
+  const poleMat = new THREE.MeshStandardMaterial({color:0x14161a, roughness:.8});
+  const lampMat = new THREE.MeshBasicMaterial({color:0xffb020});
+  for (let d=7, i=0; d<LEN-4; d+=16, i++){
+    const u = d/LEN;
+    curve.getPointAt(u,_p); curve.getTangentAt(u,_t);
+    _n.set(-_t.z,0,_t.x);
+    const side = (i%2===0) ? 1 : -1;
+    const g = new THREE.Group();
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(.06,.08,4.6,6), poleMat);
+    pole.position.y = 2.3; g.add(pole);
+    const armDir = -side;
+    const arm = new THREE.Mesh(new THREE.BoxGeometry(1.4,.07,.07), poleMat);
+    arm.position.set(_n.x*armDir*.7, 4.55, _n.z*armDir*.7); g.add(arm);
+    const lamp = new THREE.Mesh(new THREE.BoxGeometry(.4,.1,.14), lampMat);
+    lamp.position.set(_n.x*armDir*1.35, 4.5, _n.z*armDir*1.35); g.add(lamp);
+    g.position.set(_p.x + _n.x*6.6*side, 0, _p.z + _n.z*6.6*side);
+    g.rotation.y = Math.atan2(-_t.z,_t.x);
+    scene.add(g);
+  }
+
+  const roadSamples = [];
+  for (let i=0;i<=300;i++){
+    curve.getPointAt(i/300,_p);
+    roadSamples.push([_p.x,_p.z]);
+  }
+  const distToRoad = (x,z) => {
+    let m = 1e9;
+    for (let i=0;i<roadSamples.length;i+=2){
+      const dx = x-roadSamples[i][0], dz = z-roadSamples[i][1];
+      const dd = dx*dx+dz*dz;
+      if (dd<m) m = dd;
+    }
+    return Math.sqrt(m);
+  };
+
+  const winTex = tex(128,256,ctx => {
+    ctx.fillStyle = '#0e1116'; ctx.fillRect(0,0,128,256);
+    for (let y=14; y<244; y+=22) for (let x=10; x<116; x+=20){
+      const r = Math.random();
+      if (r < .24)      ctx.fillStyle = 'rgba(255,186,100,'+(.5+Math.random()*.5)+')';
+      else if (r < .36) ctx.fillStyle = 'rgba(160,190,255,'+(.35+Math.random()*.4)+')';
+      else              ctx.fillStyle = 'rgba(20,24,30,.9)';
+      ctx.fillRect(x,y,13,15);
+    }
+  });
+  const bldMats = [0,1,2].map(() => new THREE.MeshStandardMaterial({
+    map:winTex, emissive:0xffffff, emissiveMap:winTex, emissiveIntensity:.5,
+    roughness:.85, color:0xb8bcc4}));
+  const roofMat = new THREE.MeshStandardMaterial({color:0x0c0d10, roughness:.9});
+  const bldCount = isMobile() ? 22 : 34;
+  let tries = 0;
+  for (let i=0; i<bldCount && tries<bldCount*14; tries++){
+    const u = Math.random();
+    curve.getPointAt(u,_p); curve.getTangentAt(u,_t);
+    _n.set(-_t.z,0,_t.x);
+    const side = Math.random() < .5 ? 1 : -1;
+    const off = 14 + Math.random()*12;
+    const x = _p.x + _n.x*off*side, z = _p.z + _n.z*off*side;
+    if (distToRoad(x,z) < 12) continue;
+    const w = 5 + Math.random()*7, dp = 5 + Math.random()*7, h = 5 + Math.random()*13;
+    const g = new THREE.Group();
+    const b = new THREE.Mesh(new THREE.BoxGeometry(w,h,dp), bldMats[i%3]);
+    b.position.y = h/2; g.add(b);
+    const roof = new THREE.Mesh(new THREE.BoxGeometry(w+.4,.35,dp+.4), roofMat);
+    roof.position.y = h + .15; g.add(roof);
+    g.position.set(x,0,z);
+    g.rotation.y = Math.atan2(-_t.z,_t.x) + Math.PI/2 + (Math.random()-.5)*.3;
+    scene.add(g);
+    i++;
+  }
+
+  const trunkMat = new THREE.MeshStandardMaterial({color:0x1a140e, roughness:1});
+  const leafMats = [0x0e1a10, 0x102014, 0x0d1811].map(c =>
+    new THREE.MeshStandardMaterial({color:c, roughness:1, flatShading:true}));
+  const treeCount = isMobile() ? 30 : 55;
+  let ttries = 0;
+  for (let i=0; i<treeCount && ttries<treeCount*10; ttries++){
+    const u = Math.random();
+    curve.getPointAt(u,_p); curve.getTangentAt(u,_t);
+    _n.set(-_t.z,0,_t.x);
+    const side = Math.random() < .5 ? 1 : -1;
+    const off = 8 + Math.random()*6;
+    const x = _p.x + _n.x*off*side + (Math.random()-.5)*6;
+    const z = _p.z + _n.z*off*side + (Math.random()-.5)*6;
+    if (distToRoad(x,z) < 7) continue;
+    const s = .8 + Math.random()*.9;
+    const g = new THREE.Group();
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(.16,.24,2.2,5), trunkMat);
+    trunk.position.y = 1.1; g.add(trunk);
+    const leaves = new THREE.Mesh(new THREE.IcosahedronGeometry(1.7,0),
+      leafMats[i%3]);
+    leaves.position.y = 2.9; leaves.scale.set(s, s*1.15, s); g.add(leaves);
+    g.position.set(x,0,z);
+    g.rotation.y = Math.random()*Math.PI*2;
+    scene.add(g);
+    i++;
+  }
+
+  const tl = {state:'red'};
+  {
+    const uC = .26;
+    curve.getPointAt(uC,_p); curve.getTangentAt(uC,_t);
+    _n.set(-_t.z,0,_t.x);
+    const heading = Math.atan2(-_t.z,_t.x);
+    const cross = new THREE.Mesh(new THREE.PlaneGeometry(9,70),
+      new THREE.MeshStandardMaterial({map:asphaltTex, color:0xb9bcc2,
+        roughness:.35, metalness:.25, envMapIntensity:.7}));
+    cross.rotation.x = -Math.PI/2;
+    cross.rotation.z = -heading;
+    cross.position.set(_p.x, .008, _p.z);
+    scene.add(cross);
+    const stop = new THREE.Mesh(new THREE.BoxGeometry(.5,.02,7.6),
+      new THREE.MeshBasicMaterial({color:0xd8dade}));
+    stop.position.set(_p.x - _t.x*6.5, .025, _p.z - _t.z*6.5);
+    stop.rotation.y = heading;
+    scene.add(stop);
+    const g = new THREE.Group();
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,3.6,8), poleMat);
+    pole.position.y = 1.8; g.add(pole);
+    const box = new THREE.Mesh(new THREE.BoxGeometry(.42,1.15,.3),
+      new THREE.MeshStandardMaterial({color:0x0c0d10, roughness:.5}));
+    box.position.y = 3.7; g.add(box);
+    const mkLamp = (y,col) => {
+      const m = new THREE.Mesh(new THREE.CircleGeometry(.13,20),
+        new THREE.MeshBasicMaterial({color:col}));
+      m.position.set(0,y,.16); g.add(m); return m;
+    };
+    tl.red = mkLamp(4.05,0x3a0f0c);
+    tl.green = mkLamp(3.35,0x0a2a10);
+    g.position.set(_p.x + _n.x*6.4, 0, _p.z + _n.z*6.4);
+    g.rotation.y = heading + Math.PI;
+    scene.add(g);
+  }
+  tl.set = st => {
+    tl.state = st;
+    tl.red.material.color.set(st==='red' ? 0xff3b30 : 0x3a0f0c);
+    tl.green.material.color.set(st==='green' ? 0x2ee56a : 0x0a2a10);
+  };
+
+  {
+    const uD = .985;
+    curve.getPointAt(uD,_p); curve.getTangentAt(uD,_t);
+    const heading = Math.atan2(-_t.z,_t.x);
+    const pad = new THREE.Mesh(new THREE.PlaneGeometry(11,18),
+      new THREE.MeshStandardMaterial({color:0x16181d, roughness:.5}));
+    pad.rotation.x = -Math.PI/2; pad.rotation.z = -heading;
+    pad.position.set(_p.x - _t.x*6, .006, _p.z - _t.z*6);
+    scene.add(pad);
+    const white = new THREE.MeshBasicMaterial({color:0xc9ccd2});
+    for (let i=-1;i<=1;i++){
+      _n.set(-_t.z,0,_t.x);
+      const line = new THREE.Mesh(new THREE.BoxGeometry(.14,.02,7), white);
+      line.position.set(_p.x - _t.x*7 + _n.x*i*3.4, .02, _p.z - _t.z*7 + _n.z*i*3.4);
+      line.rotation.y = heading;
+      scene.add(line);
+    }
+  }
+
+  /* ══ DE AUTO ══ */
+  const carRoot = new THREE.Group();
+  const body = new THREE.Group();
+  carRoot.add(body); scene.add(carRoot);
+
+  const paint = new THREE.MeshPhysicalMaterial({color:0xa9aeb5,
+    metalness:.85, roughness:.3, clearcoat:1, clearcoatRoughness:.06,
+    envMapIntensity:1.6});
+  const glass = new THREE.MeshPhysicalMaterial({color:0x04060b,
+    metalness:.9, roughness:.04, envMapIntensity:2, clearcoat:1,
+    clearcoatRoughness:.03});
+  const darkPl = new THREE.MeshStandardMaterial({color:0x0b0c0e,
+    metalness:.55, roughness:.5});
+  const chrome = new THREE.MeshStandardMaterial({color:0xd8dade,
+    metalness:1, roughness:.15, envMapIntensity:1.6});
+
+  const M = (geo,mat,x,y,z,rx,ry,rz) => {
+    const m = new THREE.Mesh(geo,mat);
+    m.position.set(x,y,z);
+    if (rx) m.rotation.x = rx; if (ry) m.rotation.y = ry; if (rz) m.rotation.z = rz;
+    body.add(m); return m;
+  };
+
+  const b = new THREE.Shape();
+  b.moveTo(-2.32,.3);  b.lineTo(2.36,.3);
+  b.quadraticCurveTo(2.45,.33,2.45,.5);
+  b.quadraticCurveTo(2.44,.62,2.3,.66);
+  b.lineTo(1.15,.8);
+  b.quadraticCurveTo(.95,.84,.85,.9);
+  b.lineTo(-1.55,.98);
+  b.quadraticCurveTo(-1.8,1.0,-2.1,.97);
+  b.quadraticCurveTo(-2.38,.95,-2.42,.8);
+  b.quadraticCurveTo(-2.44,.55,-2.36,.42);
+  b.quadraticCurveTo(-2.34,.32,-2.32,.3);
+  const bodyGeo = new THREE.ExtrudeGeometry(b,{depth:1.58, bevelEnabled:true,
+    bevelThickness:.07, bevelSize:.07, bevelSegments:3, curveSegments:22, steps:1});
+  bodyGeo.translate(0,0,-.79);
+  body.add(new THREE.Mesh(bodyGeo, paint));
+
+  const c = new THREE.Shape();
+  c.moveTo(.85,.9);
+  c.lineTo(.28,1.3);
+  c.quadraticCurveTo(.12,1.37,-.18,1.37);
+  c.lineTo(-.78,1.35);
+  c.quadraticCurveTo(-1.2,1.32,-1.55,.98);
+  c.lineTo(.85,.9);
+  const cabGeo = new THREE.ExtrudeGeometry(c,{depth:1.34, bevelEnabled:true,
+    bevelThickness:.06, bevelSize:.06, bevelSegments:3, curveSegments:16});
+  cabGeo.translate(0,0,-.67);
+  body.add(new THREE.Mesh(cabGeo, glass));
+
+  const pillar = (x1,y1,x2,y2,w,t,z,mat) => {
+    const dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy);
+    const m = new THREE.Mesh(new THREE.BoxGeometry(len,w,t), mat||paint);
+    m.position.set((x1+x2)/2,(y1+y2)/2,z);
+    m.rotation.z = Math.atan2(dy,dx);
+    body.add(m); return m;
+  };
+  [-1,1].forEach(sd => {
+    pillar(.88,.92,.32,1.28,.07,.07, sd*.73);
+    pillar(-.18,.95,-.18,1.33,.09,.07, sd*.73, darkPl);
+    pillar(-.72,1.33,-1.5,.99,.17,.07, sd*.73);
+    const trim = M(new THREE.BoxGeometry(2.3,.024,.02), chrome, -.34,.95, sd*.87);
+    trim.rotation.z = .03;
+    M(new THREE.BoxGeometry(.16,.028,.02), chrome, .52,.74, sd*.88);
+    M(new THREE.BoxGeometry(.012,.4,.012), darkPl, .92,.62, sd*.87, 0,0,.06);
+  });
+
+  const sigMatL = new THREE.MeshStandardMaterial({color:0x241503,
+    emissive:0xffa312, emissiveIntensity:0});
+  const sigMatR = sigMatL.clone();
+  [-1,1].forEach(sd => {
+    M(new THREE.BoxGeometry(.09,.05,.09), paint, .68,.97, sd*.9);
+    M(new THREE.BoxGeometry(.14,.09,.16), paint, .71,.97, sd*1.0);
+    M(new THREE.BoxGeometry(.1,.06,.02), glass, .71,.97, sd*1.08);
+    M(new THREE.BoxGeometry(.02,.03,.1), sd<0?sigMatL:sigMatR, .73,.97, sd*1.09);
+    M(new THREE.BoxGeometry(.025,.03,.09), sd<0?sigMatL:sigMatR, 1.55,.8, sd*.88);
+    const arch = new THREE.Mesh(
+      new THREE.TorusGeometry(.38,.022,8,26,Math.PI),
+      new THREE.MeshStandardMaterial({color:0x0a0a0c, roughness:.9}));
+    arch.position.set(1.39,.32, sd*.87); body.add(arch);
+    const arch2 = arch.clone(); arch2.position.x = -1.37; body.add(arch2);
+  });
+
+  const headMat = new THREE.MeshStandardMaterial({color:0x141310,
+    emissive:0xffe9c0, emissiveIntensity:.12});
+  const drlMat  = headMat.clone();
+  const brakeMat = new THREE.MeshStandardMaterial({color:0x1a0505,
+    emissive:0xff1a08, emissiveIntensity:.3});
+
+  M(new THREE.PlaneGeometry(.95,.4), chrome, 2.53,.58, 0, 0,Math.PI/2);
+  M(new THREE.PlaneGeometry(.88,.34), new THREE.MeshStandardMaterial({
+    map:tex(256,128,ctx => {
+      ctx.fillStyle = '#08090b'; ctx.fillRect(0,0,256,128);
+      ctx.fillStyle = '#c9ccd2';
+      for (let x=12; x<244; x+=15) ctx.fillRect(x,6,5,116);
+      ctx.save(); ctx.translate(128,64);
+      ctx.fillStyle = '#08090b'; ctx.beginPath(); ctx.arc(0,0,27,0,7); ctx.fill();
+      ctx.strokeStyle = '#d8dade'; ctx.lineWidth = 3.5;
+      ctx.beginPath(); ctx.arc(0,0,27,0,7); ctx.stroke();
+      ctx.strokeStyle = '#eceef2'; ctx.lineWidth = 4.5; ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(0,5); ctx.lineTo(0,-17);
+      ctx.moveTo(0,5); ctx.lineTo(-15,13);
+      ctx.moveTo(0,5); ctx.lineTo(15,13);
+      ctx.stroke(); ctx.restore();
+    }), metalness:.6, roughness:.4}), 2.537,.58, 0, 0,Math.PI/2);
+  M(new THREE.BoxGeometry(.06,.05,1.66), darkPl, 2.48,.26, 0);
+
+  [-1,1].forEach(sd => {
+    const ang = sd*.14;
+    M(new THREE.BoxGeometry(.12,.12,.36), darkPl, 2.46,.62, sd*.52, 0,ang);
+    M(new THREE.PlaneGeometry(.3,.075), glass, 2.528,.635, sd*.52, 0,ang);
+    M(new THREE.BoxGeometry(.02,.02,.28), drlMat, 2.53,.66, sd*.52, 0,ang);
+    M(new THREE.SphereGeometry(.034,10,10), headMat, 2.5,.6, sd*.6, 0,ang);
+    M(new THREE.SphereGeometry(.034,10,10), headMat, 2.5,.6, sd*.45, 0,ang);
+    M(new THREE.BoxGeometry(.02,.04,.08), sd<0?sigMatL:sigMatR, 2.53,.56, sd*.68, 0,ang);
+  });
+  [-1,1].forEach(sd => M(new THREE.BoxGeometry(.55,.018,.02), darkPl,
+    .63,1.06, sd*.27, 0,0,2.5));
+
+  [-1,1].forEach(sd => {
+    M(new THREE.BoxGeometry(.07,.1,.42), brakeMat, -2.5,.82, sd*.46);
+    M(new THREE.BoxGeometry(.06,.06,.12), darkPl, -2.49,.5, sd*.66);
+  });
+  M(new THREE.BoxGeometry(.02,.03,.85), chrome, -2.54,.82, 0);
+  const third = M(new THREE.BoxGeometry(.02,.035,.5), brakeMat, -1.62,1.07, 0);
+  third.rotation.z = .5;
+  M(new THREE.BoxGeometry(.12,.11,1.16), darkPl, -2.46,.32, 0);
+  [-1,1].forEach(sd => M(new THREE.CylinderGeometry(.05,.05,.16,14), chrome,
+    -2.52,.36, sd*.3, 0,0,Math.PI/2));
+  const plateMat = new THREE.MeshBasicMaterial({map:tex(256,64,ctx => {
+    ctx.fillStyle = '#f2c400'; ctx.fillRect(0,0,256,64);
+    ctx.fillStyle = '#141414';
+    ctx.font = '700 44px Barlow Condensed, Arial';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('FR-ED-06', 128, 36);
+  })});
+  M(new THREE.PlaneGeometry(.5,.13), plateMat, -2.545,.5, 0, 0,-Math.PI/2);
+  M(new THREE.PlaneGeometry(.4,.11), plateMat,  2.545,.46, 0, 0, Math.PI/2);
+
+  M(new THREE.BoxGeometry(.16,.025,1.25), paint, -2.31,.985, 0);
+  M(new THREE.BoxGeometry(2.15,.08,1.7), darkPl, -.08,.27, 0);
+
+  const lMat = new THREE.MeshBasicMaterial({map:tex(128,128,ctx => {
+    ctx.fillStyle = '#1b4f9c'; ctx.fillRect(0,0,128,128);
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 8; ctx.strokeRect(6,6,116,116);
+    ctx.fillStyle = '#fff';
+    ctx.font = '700 84px Barlow Condensed, Arial';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('L', 64, 72);
+  })});
+  M(new THREE.BoxGeometry(.5,.015,.5), darkPl, -.2,1.44, 0);
+  M(new THREE.CylinderGeometry(.025,.025,.3,8), darkPl, -.2,1.59, 0);
+  [-1,1].forEach(sd => {
+    const L = new THREE.Mesh(new THREE.PlaneGeometry(.42,.42), lMat);
+    L.position.set(-.2,1.81, sd*.012); L.rotation.y = sd*Math.PI/2; body.add(L);
+  });
+
+  const tireMat = new THREE.MeshStandardMaterial({color:0x0a0a0b, roughness:.95});
+  const rimMat  = new THREE.MeshStandardMaterial({color:0x2b2d31, metalness:.95, roughness:.3});
+  const discMat = new THREE.MeshStandardMaterial({color:0x9ba0a8, metalness:1, roughness:.35});
+  const calMat  = new THREE.MeshStandardMaterial({color:0xffb020, metalness:.4, roughness:.5});
+  const wheels = [], steers = [];
+  const mkWheel = (x,z) => {
+    const out = Math.sign(z) || 1;
+    const steer = new THREE.Group();
+    steer.position.set(x,.36,z);
+    const spin = new THREE.Group();
+    steer.add(spin);
+    const tireGeo = new THREE.CylinderGeometry(.36,.36,.27,26);
+    tireGeo.rotateX(Math.PI/2);
+    spin.add(new THREE.Mesh(tireGeo, tireMat));
+    const lipGeo = new THREE.TorusGeometry(.215,.02,8,26);
+    const lip = new THREE.Mesh(lipGeo, chrome);
+    lip.position.z = .135*out; spin.add(lip);
+    const lip2 = new THREE.Mesh(lipGeo, chrome);
+    lip2.position.z = -.135*out; spin.add(lip2);
+    for (let a=0;a<5;a++){
+      const holder = new THREE.Group();
+      holder.rotation.z = a*Math.PI*2/5;
+      const spoke = new THREE.Mesh(new THREE.BoxGeometry(.21,.055,.05), rimMat);
+      spoke.position.x = .1;
+      spoke.rotation.y = .14*out;
+      holder.add(spoke);
+      holder.position.z = .1*out;
+      spin.add(holder);
+    }
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(.055,.055,.34,12), chrome);
+    hub.rotation.x = Math.PI/2; spin.add(hub);
+    const disc = new THREE.Mesh(new THREE.CylinderGeometry(.18,.18,.04,22), discMat);
+    disc.rotation.x = Math.PI/2; spin.add(disc);
+    const cal = new THREE.Mesh(new THREE.BoxGeometry(.09,.17,.07), calMat);
+    cal.position.set(.13,.05,0); steer.add(cal);
+    carRoot.add(steer);
+    wheels.push(spin);
+    if (x > 0) steers.push(steer);
+  };
+  mkWheel( 1.39, .79); mkWheel( 1.39,-.79);
+  mkWheel(-1.37, .79); mkWheel(-1.37,-.79);
+
+  const shadowTex = tex(256,128,ctx => {
+    const g = ctx.createRadialGradient(128,64,10,128,64,120);
+    g.addColorStop(0,'rgba(0,0,0,.72)');
+    g.addColorStop(.55,'rgba(0,0,0,.4)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.fillRect(0,0,256,128);
+  });
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(6.4,3.1),
+    new THREE.MeshBasicMaterial({map:shadowTex, transparent:true, opacity:.62, depthWrite:false}));
+  shadow.rotation.x = -Math.PI/2; shadow.position.y = .045;
+  shadow.renderOrder = 2; carRoot.add(shadow);
+
+  const beams = [];
+  [-1,1].forEach(sd => {
+    const tgt = new THREE.Object3D(); tgt.position.set(16,0,sd*1.1);
+    carRoot.add(tgt);
+    const sp = new THREE.SpotLight(0xfff0d0, 0, 38, .4, .8, 1.4);
+    sp.position.set(2.5,.62, sd*.52); sp.target = tgt;
+    carRoot.add(sp); beams.push(sp);
+    const coneGeo = new THREE.ConeGeometry(1.15,8.5,20,1,true);
+    coneGeo.rotateZ(Math.PI/2);
+    const cone = new THREE.Mesh(coneGeo, new THREE.MeshBasicMaterial({
+      color:0xffe6b0, transparent:true, opacity:0, blending:THREE.AdditiveBlending,
+      depthWrite:false, side:THREE.DoubleSide}));
+    cone.position.set(2.5+4.25,.52, sd*.52); cone.rotation.z = -.06;
+    carRoot.add(cone); beams.push(cone);
+  });
+
+  const mkPool = (col,x,z,s) => {
+    const p = new THREE.Mesh(new THREE.CircleGeometry(1,24),
+      new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0,
+        blending:THREE.AdditiveBlending, depthWrite:false}));
+    p.rotation.x = -Math.PI/2; p.position.set(x,.05,z);
+    p.scale.set(1,s,1); carRoot.add(p); return p;
+  };
+  const pools = {
+    head: [ mkPool(0xffd9a0, 3.4, .55, 1.7), mkPool(0xffd9a0, 3.4, -.55, 1.7) ],
+    brake: mkPool(0xff2a1a, -3.2, 0, 1.5)
+  };
+
+  return {renderer, scene, camera, curve, LEN, carRoot, body, wheels, steers,
+          headMat, drlMat, brakeMat, sigMatL, sigMatR, beams, tl, pools};
+}
+
+/* ═══════ Kruispunt-keuzes ═══════ */
+let tlResetT = null;
+function kies(links){
+  if (!three || RM){ goTo(links ? '#proefles' : '#rijopleiding'); return; }
+  three.tl.set('green');
+  clearTimeout(tlResetT);
+  tlResetT = setTimeout(() => three && three.tl.set('red'), 6000);
+  state.turnDir = links ? -1 : 1; state.turnUntil = performance.now() + 2400;
+  state.yawKick = links ? .35 : -.35;
+  goTo(links ? '#proefles' : '#rijopleiding');
+}
+const kL = document.getElementById('keuzeProefles');
+const kR = document.getElementById('keuzeDoor');
+kL.onclick = () => kies(true);
+kR.onclick = () => kies(false);
+
+document.getElementById('startRit').addEventListener('click', () => {
+  if (state.started){ goTo('#kruispunt'); return; }
+  state.started = true; state.headOn = true;
+  document.getElementById('hud').classList.add('on');
+  if (!three || RM){ goTo('#kruispunt'); return; }
+  state.boost = 7;
+  const btn = document.getElementById('startRit');
+  btn.style.pointerEvents = 'none';
+  gsap.to({}, {duration:1.5, onComplete(){
+    btn.style.pointerEvents = '';
+    goTo('#kruispunt');
+  }});
+});
+
+addEventListener('scroll', () => {
+  if (!state.started && Math.abs(scrollY - state.lastY) > 60){
+    state.started = true; state.headOn = true;
+    document.getElementById('hud').classList.add('on');
+  }
+}, {passive:true});
+
+/* ═══════ Render-loop — geveerde voortgang, filmcamera's ═══════ */
+let last = performance.now(), frame = 0;
+const hudSpeed = document.getElementById('hudSpeed');
+const hudGear = document.getElementById('hudGear');
+const hudState = document.getElementById('hudState');
+const hudSec = document.getElementById('hudSec');
+const SECNAMES = {hero:'VERTREK', kruispunt:'KRUISPUNT', proefles:'PROEFLES',
+  rijopleiding:'OPLEIDING', pakketten:'PAKKETTEN', overfred:'OVER FRED', contact:'BESTEMMING'};
+
+const CAMKEYS = [
+  {p:0.00, along:  7.5, lat: 3.4, h: 1.15, la:-2},
+  {p:0.10, along:  9.5, lat:-4.5, h: 4.4,  la:-3},
+  {p:0.18, along: -8.5, lat: 1.6, h: 2.6,  la: 7},
+  {p:0.32, along:  2.2, lat: 7.6, h:  .95, la: 1},
+  {p:0.46, along: -7.0, lat:-3.2, h: 2.3,  la: 6},
+  {p:0.62, along:  8.2, lat: 5.2, h: 3.6,  la:-2},
+  {p:0.78, along: -2.5, lat: 6.6, h: 1.05, la: 2},
+  {p:1.00, along:-11.5, lat: 2.2, h: 5.6,  la: 8},
+];
+const smooth = t => t*t*(3-2*t);
+const V = (a,b,t) => a + (b-a)*t;
+
+const _carP = new THREE.Vector3(), _carT = new THREE.Vector3(),
+      _carPos = new THREE.Vector3(), _tan2 = new THREE.Vector3(),
+      _camD = new THREE.Vector3(), _lookD = new THREE.Vector3(),
+      _nrm = new THREE.Vector3();
+
+function tick(now){
+  requestAnimationFrame(tick);
+  if (document.hidden || !three) return;
+  const dt = Math.min(.05, (now-last)/1000); last = now; state.t += dt;
+  const T = three;
+
+  const maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  const prog = Math.min(1, Math.max(0, scrollY/maxScroll));
+
+  /* ══ DE SMOOTHNESS-FIX ══
+     Voortgang over de route is niet meer scrollY-direct, maar een
+     geveerde waarde: elke scroll-stap wordt een "doel" waar de auto
+     rustig naartoe glijdt. Dit is exact het gevoel van versie 1 —
+     maar dan rijdend door de wereld. */
+  state.uS += (prog - state.uS) * (1 - Math.pow(.02, dt));
+  const u = state.uS;
+
+  /* Echte rijsnelheid: afgeleid van de geveerde beweging zelf,
+     zodat wielen/HUD/trilling perfect synchroon lopen met wat je
+     ziet bewegen (en automatisch dempen mee). */
+  const routeSpeedRaw = (u - state.uPrev) * T.LEN / Math.max(dt,.001);
+  state.uPrev = u;
+  state.speed += (routeSpeedRaw - state.speed) * (1 - Math.pow(.04, dt));
+  state.accelS += ((routeSpeedRaw - state.speed) - state.accelS) * (1 - Math.pow(.02, dt));
+
+  /* — Auto op de route, netjes in de rechterrijstrook — */
+  T.curve.getPointAt(u, _carP);
+  T.curve.getTangentAt(u, _carT);
+  _nrm.set(-_carT.z, 0, _carT.x);
+  _carPos.set(_carP.x + _nrm.x*LANE_OFF, .01, _carP.z + _nrm.z*LANE_OFF);
+  T.carRoot.position.copy(_carPos);
+  state.yawKick *= Math.max(0, 1 - dt*1.1);
+  T.carRoot.rotation.y = Math.atan2(-_carT.z, _carT.x) + state.yawKick;
+
+  /* — Stuureenhoek uit de komende bocht — */
+  T.curve.getTangentAt(Math.min(1, u + .022), _tan2);
+  const crossY = _carT.x*_tan2.z - _carT.z*_tan2.x;
+  const steer = Math.max(-.4, Math.min(.4, -crossY*4));
+  state.steerS += (steer - state.steerS) * (1 - Math.pow(.03, dt));
+  T.steers.forEach(s => s.rotation.y = state.steerS);
+
+  const braking = (u > .24 && u < .30) || (!state.started);
+  state.brakeT += ((braking ? 1 : 0) - state.brakeT) * (1 - Math.pow(.01, dt));
+  state.headLevel += ((state.headOn ? 1 : 0) - state.headLevel) * (1 - Math.pow(.05, dt));
+  const hl = .12 + state.headLevel*3;
+  T.headMat.emissiveIntensity = hl;
+  T.drlMat.emissiveIntensity  = hl * .9;
+  T.brakeMat.emissiveIntensity = .3 + state.brakeT*2.6;
+
+  if (state.turnDir && now > state.turnUntil) state.turnDir = 0;
+  let blinkDir = 0;
+  if (state.turnDir) blinkDir = state.turnDir;
+  else if (Math.abs(state.speed) > 2 && Math.abs(crossY) > .012)
+    blinkDir = crossY < 0 ? -1 : 1;
+  const blink = (state.t*2.6) % 1 < .5;
+  T.sigMatL.emissiveIntensity = (blinkDir === -1 && blink) ? 3.2 : 0;
+  T.sigMatR.emissiveIntensity = (blinkDir ===  1 && blink) ? 3.2 : 0;
+
+  const wheelSpin = state.speed*dt/.36;
+  T.wheels.forEach(w => w.rotation.z -= wheelSpin);
+
+  T.body.rotation.z += (Math.max(-.04, Math.min(.04, -state.accelS*.004)) - T.body.rotation.z) * .05;
+  T.body.rotation.x += ((state.steerS*.28) - T.body.rotation.x) * .06;
+  T.body.rotation.y += ((state.steerS*.14) - T.body.rotation.y) * .05;
+  T.body.position.y = (state.started && Math.abs(state.speed) < .6)
+    ? Math.sin(state.t*42)*.004 : 0;
+
+  T.beams.forEach(bm => {
+    if (bm.isSpotLight) bm.intensity = state.headLevel*30;
+    else bm.material.opacity = state.headLevel*.05;
+  });
+  T.pools.head.forEach(m => m.material.opacity = state.headLevel*.28);
+  T.pools.brake.material.opacity = state.brakeT*.34;
+
+  /* — Sectie-camera's: meedraaiend, extra traag gedempt — */
+  let i = 0;
+  while (i < CAMKEYS.length-2 && u > CAMKEYS[i+1].p) i++;
+  const a = CAMKEYS[i], bK = CAMKEYS[i+1];
+  const tt = smooth(Math.min(1, Math.max(0, (u-a.p)/(bK.p-a.p))));
+  const mf = isMobile() ? 1.25 : 1;
+  const along = V(a.along, bK.along, tt) * mf;
+  const lat   = V(a.lat,   bK.lat,   tt) * mf + state.mouseX*2.4;
+  const h     = V(a.h,     bK.h,     tt) + state.mouseY*-1.2;
+  const la    = V(a.la,    bK.la,    tt);
+
+  _camD.set(
+    _carPos.x + _carT.x*along + _nrm.x*lat,
+    h,
+    _carPos.z + _carT.z*along + _nrm.z*lat
+  );
+  _lookD.set(_carPos.x + _carT.x*la, 1.15, _carPos.z + _carT.z*la);
+
+  const sh = Math.min(1, Math.abs(state.speed)/16) * .012;
+  _camD.y += Math.sin(state.t*23.7)*sh;
+  _camD.x += Math.cos(state.t*19.3)*sh*.6;
+
+  if (!state.camInit){
+    state.camPos.copy(_camD); state.camLook.copy(_lookD); state.camInit = true;
+  }
+  const damp = 1 - Math.pow(.008, dt);      // nog trager zweven dan eerst
+  state.camPos.lerp(_camD, damp);
+  state.camLook.lerp(_lookD, damp);
+  T.camera.position.copy(state.camPos);
+  T.camera.lookAt(state.camLook);
+
+  const mouseIdle = (now - state.lastPointer) > 1500;
+  const idle = Math.abs(state.speed) < .06 && Math.abs(u - prog) < .0004
+    && blinkDir === 0 && Math.abs(state.yawKick) < .01
+    && Math.abs(state.headLevel - (state.headOn?1:0)) < .01
+    && state.camPos.distanceTo(_camD) < .05 && mouseIdle;
+  if (idle){ frame++; return; }
+
+  T.renderer.render(T.scene, T.camera);
+
+  if (frame++ % 6 === 0){
+    hudSpeed.textContent = Math.min(70, Math.round(Math.abs(state.speed)*3.6/3));
+    hudGear.textContent = !state.started ? 'P' : (Math.abs(state.speed) > .8 ? 'D' : 'N');
+    hudState.textContent = !state.started ? 'GEPARKEERD'
+      : (Math.abs(state.speed) > .8 ? 'ONDERWEG' : 'STILSTAND');
+    hudSec.textContent = SECNAMES[curSection] || '—';
+  }
+}
+
+/* ═══════ Opstart ═══════ */
+function boot(){
+  try { three = initThree(); }
+  catch(err){
+    three = null; document.body.classList.add('no-webgl');
+    console.warn('3D-scène uitgeschakeld:', err);
+    return;
+  }
+  if (!three) return;
+
+  if (!RM){
+    addEventListener('pointermove', e => {
+      state.mouseX = (e.clientX/innerWidth - .5);
+      state.mouseY = (e.clientY/innerHeight - .5);
+      state.lastPointer = performance.now();
+    }, {passive:true});
+    ScrollTrigger.create({trigger:'#kruispunt', start:'top top', end:'+=120%', pin:true});
+    [kL,kR].forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        if (!state.turnDir) state.turnDir = (el === kL ? -1 : 1); });
+      el.addEventListener('mouseleave', () => {
+        if (performance.now() > state.turnUntil) state.turnDir = 0; });
+    });
+    requestAnimationFrame(tick);
+    requestAnimationFrame(() => document.getElementById('stage').classList.add('ready'));
+  } else {
+    state.started = true; state.headOn = true; state.headLevel = 1;
+    three.headMat.emissiveIntensity = 3.2;
+    three.drlMat.emissiveIntensity = 2.9;
+    document.getElementById('hud').classList.add('on');
+    const p = three.curve.getPointAt(0);
+    const t0 = three.curve.getTangentAt(0);
+    const n0 = new THREE.Vector3(-t0.z, 0, t0.x);
+    const carP = new THREE.Vector3(p.x + n0.x*LANE_OFF, .01, p.z + n0.z*LANE_OFF);
+    three.carRoot.position.copy(carP);
+    three.carRoot.rotation.y = Math.atan2(-t0.z, t0.x);
+    const render = () => {
+      three.camera.position.set(carP.x + t0.x*7.5 + n0.x*3.4, 1.15, carP.z + t0.z*7.5 + n0.z*3.4);
+      three.camera.lookAt(carP.x - t0.x*2, 1.1, carP.z - t0.z*2);
+      three.renderer.render(three.scene, three.camera);
+    };
+    render();
+    document.getElementById('stage').classList.add('ready');
+    addEventListener('resize', render);
+  }
+  addEventListener('resize', () => {
+    three.camera.aspect = innerWidth/innerHeight;
+    three.camera.fov = isMobile() ? 56 : 42;
+    three.camera.updateProjectionMatrix();
+    three.renderer.setSize(innerWidth, innerHeight);
+    if (RM){
+      const p = three.curve.getPointAt(0);
+      const t0 = three.curve.getTangentAt(0);
+      const n0 = new THREE.Vector3(-t0.z, 0, t0.x);
+      const carP = new THREE.Vector3(p.x + n0.x*LANE_OFF, .01, p.z + n0.z*LANE_OFF);
+      three.camera.position.set(carP.x + t0.x*7.5 + n0.x*3.4, 1.15, carP.z + t0.z*7.5 + n0.z*3.4);
+      three.camera.lookAt(carP.x - t0.x*2, 1.1, carP.z - t0.z*2);
+      three.renderer.render(three.scene, three.camera);
+    }
+  });
+}
+if (document.readyState === 'loading')
+  addEventListener('DOMContentLoaded', () => requestAnimationFrame(boot));
+else requestAnimationFrame(boot);
+
+addEventListener('load', () => ScrollTrigger.refresh());
+</script>
+</body>
+</html>
