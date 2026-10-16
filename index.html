@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fred Autorijschool — Rijbewijs halen in Epe en omgeving</title>
+<title>Fred Autorijschool — Rijbewijs halen in Hoeksche Waard en omgeving</title>
 <meta name="description" content="Persoonlijke rijopleiding in een Mercedes C-Klasse. Van proefles tot examen — rustig, geduldig en op jouw tempo.">
 
 <!--
@@ -13,14 +13,25 @@
 
   TELEFOON        → 06 – 24 68 10 12            CHECK
   E-MAIL          → info@fredautorijschool.nl   CHECK
-  LESGEBIED       → Epe en omgeving             CHECK
+  LESGEBIED       → Hoeksche Waard en omgeving  ✓ (inclusief Oud-Beijerland)
   PROEFLES        → € 25,– (verrekening bij pakket)  CHECK
   LOSSE LES       → € 39,50 per les (60 min)    CHECK
   PAKKET START    → 12 lessen + examen — € 995      CHECK
   PAKKET COMPLEET → 20 lessen + toets + examen — € 1.595 CHECK
   PAKKET INTENSIEF→ 30 lessen + toets + examen — € 2.295 CHECK
-  REVIEWS         → sectie "Over Fred"          CHECK (vervang door echte quotes)
   AUTO            → Mercedes C-Klasse           ✓ zoals op de echte site
+
+  GOOGLE REVIEWS — CHECK & VERVANG:
+  → Alle reviews staan in EEN lijst onderaan het script: de array
+    "REVIEWS" (zoek naar  ══ REVIEWS-DATA ══).  De EERSTE 8 uit de
+    lijst draaien in de 3D-carrousel — zet daar de mooiste echte
+    reviews van Fred neer.  Aantal kaartjes aanpassen? Zoek
+    "RING_N".  De namen en teksten die er nu in staan zijn
+    NEUTRALE TIJDELIJKE PLACEHOLDERS.
+  → GOOGLE-SCORE   → nu "5,0" · 15 reviews  CHECK (exacte cijfers)
+  → GOOGLE-LINK    → zoek "grLink" in de HTML: dit is nu de
+    algemene Google Maps-pagina. Vervang door de directe link
+    naar de Google-listing van Fred Autorijschool.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +44,7 @@
   --ink:#f2f3f6; --mut:#9aa0ab; --line:rgba(255,255,255,.09);
   --amber:#ffb020; --amber-2:#ffc24d; --amber-ink:#181004;
   --err:#ff5d5d;
+  --g-blue:#4285f4; --g-yellow:#fbbc04;
   --fh:'Barlow Condensed',sans-serif; --fb:'Barlow',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -55,17 +67,34 @@ body.no-webgl{background:
 main{position:relative;z-index:1}
 section{position:relative;padding-block:clamp(90px,16vh,180px)}
 .sec-label{font:600 13px/1 var(--fh);letter-spacing:.34em;text-transform:uppercase;
-  color:var(--mut);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  color:var(--mut);display:flex;align-items:center;gap:14px;margin-bottom:22px;
+  text-shadow:0 1px 10px rgba(0,0,0,.85)}
 .sec-label b{color:var(--amber);font-weight:700}
 .sec-label::after{content:"";height:1px;width:56px;background:var(--line)}
 h1,h2,h3{font-family:var(--fh);font-weight:700;line-height:.98;
   text-transform:uppercase;letter-spacing:.01em}
-h2{font-size:clamp(38px,6vw,74px);max-width:12ch}
-.lead{color:var(--mut);font-size:clamp(16px,1.4vw,18px);max-width:46ch;margin-top:22px}
+h2{font-size:clamp(38px,6vw,74px);max-width:14ch}
+.lead{color:#c6cbd5;font-size:clamp(16px,1.4vw,18px);max-width:46ch;margin-top:22px;
+  text-shadow:0 2px 14px rgba(0,0,0,.85),0 0 3px rgba(0,0,0,.6)}
+#hero .lead{font-size:clamp(17px,1.6vw,20px);font-weight:500;
+  text-shadow:0 2px 18px rgba(0,0,0,.9),0 0 4px rgba(0,0,0,.7)}
 .side-l{max-width:560px;margin-right:auto}
 .side-r{max-width:560px;margin-left:auto}
 .panel{background:rgba(13,15,20,.72);border:1px solid var(--line);
   border-radius:6px;padding:clamp(24px,3vw,40px)}
+
+/* ══ KINETISCHE KOPPEN ══ */
+.kw{display:inline-block;overflow:hidden;vertical-align:bottom;
+  padding-bottom:.1em;margin-bottom:-.1em}
+.kwi{display:inline-block;
+  transform:translateY(125%);
+  transition:transform .8s cubic-bezier(.16,.84,.3,1)}
+h1.play .kwi, h2.play .kwi{transform:translateY(0)}
+.acc{font-style:normal;font-weight:700;color:var(--amber)}
+
+.m-km{display:inline-block;font:700 11px/1 var(--fh);letter-spacing:.32em;
+  color:var(--amber-ink);background:var(--amber);padding:6px 10px 5px;
+  border-radius:2px;margin-bottom:12px}
 .btn{display:inline-flex;align-items:center;gap:12px;
   font:700 16px/1 var(--fh);letter-spacing:.14em;text-transform:uppercase;
   padding:17px 28px;border-radius:3px;transition:background .18s,border-color .18s,transform .1s}
@@ -111,8 +140,7 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
   display:grid;place-items:center}
 #closeMenu svg{width:26px;height:26px}
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
-#hero h1{font-size:clamp(52px,8.5vw,118px);max-width:9ch}
-#hero .lead{font-size:clamp(17px,1.6vw,20px)}
+#hero h1{font-size:clamp(52px,8.5vw,118px);max-width:10ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
 .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:10px;
@@ -135,9 +163,9 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
 .choice.go-r:hover{transform:translateX(6px)}
 .kp-note{margin-top:30px;font-size:13.5px;color:var(--mut)}
 #proefles{min-height:120vh;display:flex;align-items:center}
-.price-tag{display:inline-flex;align-items:baseline;gap:10px;margin-top:28px;
+.price-tag{display:inline-flex;align-items:baseline;gap:12px;margin-top:28px;
   border-left:3px solid var(--amber);padding-left:16px}
-.price-tag b{font:700 34px/1 var(--fh)}
+.price-tag b{font:700 44px/1 var(--fh);font-variant-numeric:tabular-nums}
 .price-tag span{color:var(--mut);font-size:14px}
 .route{margin-top:44px;position:relative;padding-left:58px;
   border-left:1px dashed rgba(255,255,255,.22);max-width:600px}
@@ -169,7 +197,8 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
   transition:transform 1.3s cubic-bezier(.2,.85,.25,1)}
 .pack.lit .needle{transform:rotate(var(--a))}
 .pack h3{font-size:clamp(28px,2.4vw,36px)}
-.pack .p-price{font:700 52px/1 var(--fh);margin:16px 0 4px}
+.pack .p-price{font:700 52px/1 var(--fh);margin:16px 0 4px;
+  font-variant-numeric:tabular-nums}
 .pack .p-price small{font-size:16px;color:var(--mut);font-weight:600;letter-spacing:.06em}
 .pack ul{list-style:none;margin:22px 0 28px;flex:1}
 .pack li{display:flex;gap:12px;padding:9px 0;color:#c9ccd3;font-size:15px;
@@ -188,14 +217,88 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
 .fred-card .fc-sub{font:600 12px/1.4 var(--fh);letter-spacing:.24em;
   color:var(--mut);text-transform:uppercase}
 .fred-card p{color:#c4c7ce}
-.quotes{margin-top:34px;display:grid;gap:16px}
-.quote{border-left:3px solid var(--amber);padding:4px 0 4px 18px;color:#c4c7ce}
-.quote em{font-style:normal;display:block;font-size:16.5px}
-.quote small{color:var(--mut);display:block;margin-top:6px;font-size:13px}
 .fact{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
 .fact svg{width:22px;height:22px;color:var(--amber);flex:none;margin-top:3px}
 .fact h4{font:700 19px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
 .fact p{color:var(--mut);font-size:15px;max-width:44ch}
+
+/* ═════════════════════════════════════════════════
+   GOOGLE REVIEWS — 3D-carrousel
+   8 kaartjes in een kring · draait automatisch ·
+   stopt bij hover · sleep om te slingeren ·
+   achterste kaarten zijn echt weggedraaid (3D)
+   ═════════════════════════════════════════════════ */
+.g-reviews{margin-top:clamp(50px,7vw,90px)}
+.gr-head{display:flex;flex-wrap:wrap;align-items:center;gap:18px;
+  padding-bottom:20px;border-bottom:1px solid var(--line)}
+.gr-g{width:36px;height:36px;flex:none}
+.gr-id h3{font-size:27px;letter-spacing:.02em}
+.gr-id small{display:block;font:600 11px/1 var(--fh);letter-spacing:.28em;
+  color:var(--mut);text-transform:uppercase;margin-top:4px}
+.gr-score{display:flex;align-items:center;gap:10px;margin-left:8px}
+.gr-stars{display:flex;gap:2px}
+.gr-stars svg{width:17px;height:17px;color:var(--g-yellow)}
+.gr-score b{font:700 26px/1 var(--fh);font-variant-numeric:tabular-nums}
+.gr-score span{color:var(--mut);font-size:13px}
+
+/* de arena: perspective + schaalwrapper */
+.gr-scalewrap{height:250px;display:flex;justify-content:center;
+  align-items:center;margin-top:24px}
+.gr-arena{width:100%;height:250px;position:relative;
+  perspective:1150px;perspective-origin:50% 42%;
+  cursor:grab;touch-action:pan-y}
+.gr-arena:active{cursor:grabbing}
+.gr-ring{position:absolute;left:50%;top:50%;width:230px;height:208px;
+  margin:-104px 0 0 -115px;transform-style:preserve-3d;will-change:transform}
+.gr-card{position:absolute;inset:0;
+  background:rgba(15,17,22,.94);border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;padding:15px 16px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  box-shadow:0 24px 46px -18px rgba(0,0,0,.75);
+  transition:border-color .25s}
+.gr-card:hover{border-color:rgba(255,176,32,.6)}
+.gr-top{display:flex;align-items:center;gap:9px}
+.gr-av{width:30px;height:30px;border-radius:50%;background:var(--g-blue);
+  color:#fff;display:grid;place-items:center;flex:none;
+  font:700 16px/1 var(--fh)}
+.gr-nm{flex:1;min-width:0}
+.gr-nm b{display:block;font:600 14px/1.2 var(--fb);color:#e8eaee;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-nm .gr-when{display:flex;align-items:center;gap:6px;margin-top:3px}
+.gr-nm .gr-when .gs{display:flex;gap:1px}
+.gr-nm .gr-when .gs svg{width:9px;height:9px;color:var(--g-yellow)}
+.gr-nm .gr-when small{color:var(--mut);font-size:11px}
+.gr-g2{width:13px;height:13px;flex:none;opacity:.9}
+.gr-txt{margin-top:10px;font-size:13px;color:#c9ccd3;line-height:1.5;
+  display:-webkit-box;-webkit-box-orient:vertical;
+  -webkit-line-clamp:4;overflow:hidden}
+.gr-pass{display:inline-block;margin-top:10px;
+  font:700 9px/1 var(--fh);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--amber);border:1px solid rgba(255,176,32,.5);
+  border-radius:2px;padding:4px 7px}
+.gr-all{display:inline-flex;align-items:center;gap:10px;margin-top:10px;
+  font:700 15px/1 var(--fh);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amber);border-bottom:1px solid rgba(255,176,32,.45);padding-bottom:4px;
+  transition:color .15s,border-color .15s}
+.gr-all:hover{color:var(--amber-2);border-color:var(--amber-2)}
+.gr-all svg{width:16px;height:16px;transition:transform .22s}
+.gr-all:hover svg{transform:translateX(4px)}
+
+/* reduced-motion / geen-3D fallback: gewone statische rij */
+.gr-arena.flat{perspective:none;cursor:default;height:auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gr-arena.flat .gr-card{position:relative;inset:auto;transform:none!important;
+  box-shadow:none}
+@media(max-width:980px){
+  .gr-scalewrap{height:205px}
+  .gr-arena{transform:scale(.8);transform-origin:center}
+  .gr-arena.flat{transform:none;grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .gr-scalewrap{height:148px}
+  .gr-arena{transform:scale(.56);transform-origin:center}
+  .gr-arena.flat{transform:none;grid-template-columns:1fr}
+}
 #contact .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,64px);margin-top:30px}
 .field{margin-bottom:18px}
 .field label{display:block;font:600 12px/1 var(--fh);letter-spacing:.22em;
@@ -243,23 +346,9 @@ body.no-webgl #hud{display:none}
   padding:16px 22px;border-radius:4px;font-size:15px;transform:translateY(20px);
   opacity:0;pointer-events:none;transition:transform .35s,opacity .35s;max-width:min(380px,86vw)}
 #toast.show{transform:none;opacity:1}
-@media(max-width:980px){
-  .nav-links,.nav-cta{display:none}
-  #menuBtn{display:flex}
-  #overfred .grid,#contact .grid{grid-template-columns:1fr}
-  .pack-grid{grid-template-columns:1fr}
-  .pack.featured{grid-row:auto}
-  #hero h1{max-width:11ch}
-}
-@media(max-width:560px){
-  .form-row{grid-template-columns:1fr}
-  #hud{left:14px;bottom:14px;padding:8px 14px 8px 12px}
-  #hudSpeed{font-size:30px;min-width:48px}
-  .scroll-hint{display:none}
-  .side-l,.side-r{margin-inline:auto}
-}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  .kwi{transform:none!important}
 }
 </style>
 </head>
@@ -310,8 +399,8 @@ body.no-webgl #hud{display:none}
   <section id="hero">
     <div class="wrap">
       <div class="side-l">
-        <div class="sec-label"><b>EPE</b> EN OMGAVING — RIJBWIJS B</div>
-        <h1>Klaar om je rijbewijs te halen?</h1>
+        <div class="sec-label"><b>HOEKSCHE WAARD</b> EN OMGAVING — RIJBWIJS B</div>
+        <h1>Klaar om je <b class="acc">rijbewijs</b> te halen?</h1>
         <p class="lead">Bij Fred Autorijschool leer je rijden in een Mercedes C-Klasse — rustig,
         persoonlijk en op jouw tempo. Van je eerste meters tot het examen.</p>
         <div class="hero-ctas">
@@ -328,7 +417,7 @@ body.no-webgl #hud{display:none}
   <section id="kruispunt">
     <div class="kp-in wrap">
       <div class="sec-label" style="justify-content:center"><b>KRUISPUNT</b></div>
-      <h2>Kies je route</h2>
+      <h2>Kies je <b class="acc">route</b></h2>
       <div class="choices">
         <button class="choice go-l" id="keuzeProefles">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
@@ -347,7 +436,7 @@ body.no-webgl #hud{display:none}
     <div class="wrap">
       <div class="side-l panel">
         <div class="sec-label"><b>01</b> PROEFLES</div>
-        <h2>Eerst even kennis­maken achter het stuur</h2>
+        <h2>Eerst even <b class="acc">kennis­maken</b> achter het stuur</h2>
         <p class="lead">In de proefles maak je kennis met Fred en de Mercedes C-Klasse. Je stapt in,
         rijdt je eerste meters en merkt meteen of het klikt. Daarna beslis je zelf
         of je verder gaat — geen verplichting.</p>
@@ -365,23 +454,27 @@ body.no-webgl #hud{display:none}
     <div class="wrap">
       <div class="side-r">
         <div class="sec-label"><b>02</b> RIJOPLEIDING</div>
-        <h2>Van eerste gas tot examen</h2>
+        <h2>Van eerste gas tot <b class="acc">examen</b></h2>
         <p class="lead">Iedereen start op een ander niveau. Daarom bepaal jij het tempo —
         en sturen we de opleiding bij waar jij groeit.</p>
         <div class="route">
           <div class="milestone"><span class="m-badge">1</span>
+            <span class="m-km">FASE 01</span>
             <h3>Starten</h3>
             <p>Nog nooit gereden? Dan oefenen we eerst in een rustige omgeving, dicht bij huis.</p>
           </div>
           <div class="milestone"><span class="m-badge">2</span>
+            <span class="m-km">FASE 02</span>
             <h3>Opbouwen</h3>
             <p>Gaat het steeds makkelijker? Dan verbreden we de route: van dorpswegen tot de snelweg.</p>
           </div>
           <div class="milestone"><span class="m-badge">3</span>
+            <span class="m-km">FASE 03</span>
             <h3>Toetsen</h3>
             <p>Met een tussentijdse toets oefen je het examen en weet je precies waar je staat.</p>
           </div>
           <div class="milestone"><span class="m-badge">4</span>
+            <span class="m-km">FASE 04</span>
             <h3>Examen</h3>
             <p>Goed voorbereid naar het CBR — kalm, vertrouwd en in een auto die je kent.</p>
           </div>
@@ -399,7 +492,7 @@ body.no-webgl #hud{display:none}
       <div class="pack-top">
         <div>
           <div class="sec-label"><b>03</b> PAKKETTEN &amp; PRIJZEN</div>
-          <h2>Kies jouw pakket</h2>
+          <h2>Kies jouw <b class="acc">pakket</b></h2>
         </div>
         <p class="los">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -417,7 +510,7 @@ body.no-webgl #hud{display:none}
             <circle cx="60" cy="62" r="5" fill="#ffb020"/>
           </svg>
           <h3>Compleet</h3>
-          <div class="p-price">€ 1.595<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <div class="p-price">€ <span class="count" data-to="1595">1.595</span><small>&nbsp;·&nbsp;eenmalig</small></div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>20 rijlessen van 60 minuten</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Tussentijdse toets als examen-oefening</li>
@@ -438,7 +531,7 @@ body.no-webgl #hud{display:none}
             <circle cx="60" cy="62" r="5" fill="#ffb020"/>
           </svg>
           <h3>Start</h3>
-          <div class="p-price">€ 995<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <div class="p-price">€ <span class="count" data-to="995">995</span><small>&nbsp;·&nbsp;eenmalig</small></div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>12 rijlessen van 60 minuten</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Praktijkexamen CBR, met de lesauto</li>
@@ -455,7 +548,7 @@ body.no-webgl #hud{display:none}
             <circle cx="60" cy="62" r="5" fill="#ffb020"/>
           </svg>
           <h3>Intensief</h3>
-          <div class="p-price">€ 2.295<small>&nbsp;·&nbsp;eenmalig</small></div>
+          <div class="p-price">€ <span class="count" data-to="2295">2.295</span><small>&nbsp;·&nbsp;eenmalig</small></div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>30 rijlessen van 60 minuten</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 7"/></svg>Tussentijdse toets + examen CBR</li>
@@ -471,23 +564,17 @@ body.no-webgl #hud{display:none}
   <section id="overfred">
     <div class="wrap">
       <div class="sec-label"><b>04</b> OVER FRED</div>
-      <h2>Eén naam, één instructeur</h2>
+      <h2>Eén naam, één <b class="acc">instructeur</b></h2>
       <div class="grid">
         <div class="fred-card panel">
           <div class="fc-top">
             <span class="fc-badge">F</span>
             <div><h3>Fred</h3>
-            <span class="fc-sub">Instructeur &amp; eigenaar</span></div>
+            <span class="fc-sub">Instructeur &amp; eigenaar — Oud-Beijerland</span></div>
           </div>
           <p>Geen rijschool met wisselende instructeurs, maar één vaste naam.
           Fred rijdt zelf met je mee — van je eerste meters tot het moment
           dat je examen haalt.</p>
-          <div class="quotes">
-            <div class="quote"><em>“Rustig, duidelijk en altijd met geduld —
-            precies wat ik nodig had.”</em><small>Voormalig leerling</small></div>
-            <div class="quote"><em>“Het vertrouwen in het verkeer kwam sneller
-            dan ik dacht.”</em><small>Voormalig leerling</small></div>
-          </div>
         </div>
         <div>
           <div class="fact">
@@ -503,7 +590,7 @@ body.no-webgl #hud{display:none}
           <div class="fact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
             <div><h4>Lesgebied</h4>
-            <p>Van huis weg oefenen in Epe en omgeving, later de bredere regio en examenroutes.</p></div>
+            <p>Van huis weg oefenen in de Hoeksche Waard en omgeving, later de bredere regio en examenroutes.</p></div>
           </div>
           <div class="fact" style="border-bottom:0">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -512,13 +599,52 @@ body.no-webgl #hud{display:none}
           </div>
         </div>
       </div>
+
+      <!-- ══ GOOGLE REVIEWS — 3D-carrousel ══ -->
+      <div class="g-reviews" id="greviews">
+        <div class="gr-head">
+          <svg class="gr-g" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
+          </svg>
+          <div class="gr-id">
+            <h3>Google Reviews</h3>
+            <small>Fred Autorijschool</small>
+          </div>
+          <div class="gr-score">
+            <span class="gr-stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+            </span>
+            <b>5,0</b>
+            <span>· 15 reviews</span>
+          </div>
+        </div>
+
+        <div class="gr-scalewrap">
+          <div class="gr-arena" id="grArena">
+            <div class="gr-ring" id="grRing"></div>
+          </div>
+        </div>
+
+        <a class="gr-all" id="grLink" href="https://www.google.com/maps" target="_blank" rel="noopener">
+          Bekijk alle reviews op Google
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
       <div class="sec-label"><b>05</b> BESTEMMING</div>
-      <h2>Aangekomen. Tijd om in te stappen.</h2>
+      <h2>Aangekomen. Tijd om <b class="acc">in te stappen</b>.</h2>
       <div class="grid">
         <div class="panel">
           <form id="proeflesForm" novalidate>
@@ -578,7 +704,7 @@ body.no-webgl #hud{display:none}
           </div>
           <div class="c-item" style="border-bottom:0">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
-            <div><h4>Lesgebied</h4><p>Epe en omgeving</p></div>
+            <div><h4>Lesgebied</h4><p>Hoeksche Waard en omgeving</p></div>
           </div>
         </div>
       </div>
@@ -599,7 +725,7 @@ body.no-webgl #hud{display:none}
       <a href="#overfred" data-scroll>Over Fred</a>
       <a href="#contact" data-scroll>Contact</a>
     </div>
-    <div class="foot-c">© 2026 Fred Autorijschool — Rijopleidingen in Epe en omgeving</div>
+    <div class="foot-c">© 2026 Fred Autorijschool — Rijopleidingen in de Hoeksche Waard en omgeving</div>
   </div>
 </footer>
 
@@ -619,6 +745,36 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobile = () => innerWidth < 720;
+
+/* ═══════════════════════════════════════════════════════════════
+   ══ REVIEWS-DATA — CHECK & VERVANG ═════════════════════════════
+   Dit is DE plek voor de echte Google reviews van Fred.
+   Per review:  n = naam · d = datum (zoals op Google) ·
+                j = jaar van slagen · t = reviewtekst.
+   De EERSTE 8 uit deze lijst draaien in de 3D-carrousel — zet
+   daar de mooiste echte reviews neer.  Aantal kaartjes
+   aanpassen?  Zoek "RING_N" iets verderop.
+   De namen en teksten hieronder zijn NEUTRALE PLACEHOLDERS.
+   ═══════════════════════════════════════════════════════════════ */
+const REVIEWS = [
+  {n:'Sanne V.',  d:'2 weken geleden',   j:'2025', t:'Rustige aanpak en duidelijke uitleg. Van de eerste les tot het examen voelde ik me goed begeleid.'},
+  {n:'Mitchel K.',d:'1 maand geleden',   j:'2025', t:'In één keer geslaagd! De rust en het geduld maakten het verschil.'},
+  {n:'Lisa D.',   d:'1 maand geleden',   j:'2025', t:'Fijne lessen in een mooie auto. Altijd op tijd en flexibel met plannen.'},
+  {n:'Thijs B.',  d:'2 maanden geleden', j:'2025', t:'Was erg zenuwachtig voor het rijden, maar dat ging er snel af. Top begeleiding.'},
+  {n:'Emma R.',   d:'2 maanden geleden', j:'2025', t:'Duidelijke uitleg en eerlijk over waar je staat. Precies wat ik nodig had.'},
+  {n:'Jordy S.',  d:'3 maanden geleden', j:'2024', t:'Goede voorbereiding op het examen, inclusief de examenklaar-route. Aanrader.'},
+  {n:'Nina H.',   d:'3 maanden geleden', j:'2024', t:'Geduldig en persoonlijk. Je voelt echt dat je met één vaste instructeur opbouwt.'},
+  {n:'Daan M.',   d:'4 maanden geleden', j:'2024', t:'Prima lessen, altijd rustig uitgelegd en nooit een haastige sfeer.'},
+  {n:'Fleur W.',  d:'5 maanden geleden', j:'2024', t:'Vanaf de proefles wist ik het al: klikte meteen. Zeker een aanrader.'},
+  {n:'Sven P.',   d:'6 maanden geleden', j:'2024', t:'Flexibel inplannen naast school was voor mij perfect. Goede richting naar het examen.'},
+  {n:'Amber T.',  d:'7 maanden geleden', j:'2024', t:'Rustig, persoonlijk en prettige auto om in te leren. Alles top geregeld.'},
+  {n:'Ruben G.',  d:'8 maanden geleden', j:'2024', t:'Eerste keer achter het stuur en al snel vertrouwen. Mooie tijd gehad.'},
+  {n:'Zoë L.',    d:'9 maanden geleden', j:'2023', t:'Leuk en leerzaam. Fred neemt echt de tijd om alles goed uit te leggen.'},
+  {n:'Lars E.',   d:'10 maanden geleden',j:'2023', t:'Kwaliteit boven kwantiteit — dat merk je in elke les. Geslaagd met een goed gevoel.'},
+  {n:'Iris O.',   d:'1 jaar geleden',    j:'2023', t:'Zeer fijne rijschool. Persoonlijk, rustig en alles helder gecommuniceerd.'}
+];
+/* Aantal kaartjes in de draaiende ring */
+const RING_N = 8;
 
 /* ═════════ UI ═════════ */
 const nav = document.getElementById('nav');
@@ -676,12 +832,171 @@ document.querySelectorAll('[data-choose]').forEach(btn => {
   });
 });
 
-if (!RM){
-  gsap.utils.toArray('section .wrap, #kruispunt .kp-in').forEach(el => {
-    gsap.from(el, {y:44, opacity:0, duration:1, ease:'power3.out',
-      scrollTrigger:{trigger:el, start:'top 88%'}});
+/* ═══════ KINETISCHE KOPPEN ═══════ */
+document.querySelectorAll('h1, h2').forEach(h => {
+  const nodes = Array.from(h.childNodes);
+  h.textContent = '';
+  let i = 0;
+  nodes.forEach(node => {
+    if (node.nodeType === 3){
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)){ h.appendChild(document.createTextNode(' ')); return; }
+        const kw = document.createElement('span'); kw.className = 'kw';
+        const kwi = document.createElement('span'); kwi.className = 'kwi';
+        kwi.textContent = part;
+        kwi.style.transitionDelay = (150 + i*80) + 'ms';
+        i++;
+        kw.appendChild(kwi); h.appendChild(kw);
+      });
+    } else if (node.nodeType === 1){
+      const kw = document.createElement('span'); kw.className = 'kw';
+      const kwi = document.createElement('span'); kwi.className = 'kwi';
+      kwi.style.transitionDelay = (150 + i*80) + 'ms';
+      i++;
+      kwi.appendChild(node);
+      kw.appendChild(kwi); h.appendChild(kw);
+    }
   });
-}
+});
+
+const hIO = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){
+    e.target.classList.add('play');
+    hIO.unobserve(e.target);
+  }
+}), {threshold:.3});
+document.querySelectorAll('h1, h2').forEach(h => hIO.observe(h));
+
+/* ═══════════════════════════════════════════════════════════
+   GOOGLE REVIEWS — 3D-CARROUSSEL
+   8 kaartjes staan in een kring (echte CSS-3D: perspective +
+   preserve-3d + backface-visibility).  De ring draait
+   automatisch langzaam;  bij hover stopt hij zodat je kunt
+   lezen;  slepen slingert hem rond met wat momentum.
+   Draait alleen als de sectie zichtbaar is (performance).
+   ═══════════════════════════════════════════════════════════ */
+(function buildReviewCarousel(){
+  const arena = document.getElementById('grArena');
+  const ring  = document.getElementById('grRing');
+  const G_MINI = '<svg class="gr-g2" viewBox="0 0 24 24" aria-hidden="true">'
+    + '<path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/>'
+    + '<path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/>'
+    + '<path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/>'
+    + '<path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></svg>';
+  const STAR = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>';
+
+  const list = REVIEWS.slice(0, RING_N);
+  const N = list.length;
+
+  /* — reduced motion: gewone statische rij — */
+  if (RM){
+    arena.classList.add('flat');
+    list.forEach(r => {
+      const card = document.createElement('article');
+      card.className = 'gr-card';
+      card.innerHTML =
+        '<div class="gr-top"><span class="gr-av" aria-hidden="true">' + r.n.charAt(0) + '</span>'
+        + '<div class="gr-nm"><b>' + r.n + '</b>'
+        + '<div class="gr-when"><span class="gs" aria-label="5 sterren">'
+        + STAR + STAR + STAR + STAR + STAR + '</span><small>· ' + r.d + '</small></div></div>'
+        + G_MINI + '</div>'
+        + '<p class="gr-txt">“' + r.t + '”</p>'
+        + '<span class="gr-pass">Geslaagd ’' + r.j.slice(2) + '</span>';
+      arena.appendChild(card);
+    });
+    return;
+  }
+
+  /* — de kring: elke kaart op zijn hoek, naar buiten geschoven — */
+  const CARD_W = 230;
+  const step = 360 / N;
+  const R = Math.round((CARD_W/2) / Math.tan(Math.PI / N));  /* net geen overlap */
+  list.forEach((r, i) => {
+    const card = document.createElement('article');
+    card.className = 'gr-card';
+    card.innerHTML =
+      '<div class="gr-top"><span class="gr-av" aria-hidden="true">' + r.n.charAt(0) + '</span>'
+      + '<div class="gr-nm"><b>' + r.n + '</b>'
+      + '<div class="gr-when"><span class="gs" aria-label="5 sterren">'
+      + STAR + STAR + STAR + STAR + STAR + '</span><small>· ' + r.d + '</small></div></div>'
+      + G_MINI + '</div>'
+      + '<p class="gr-txt">“' + r.t + '”</p>'
+      + '<span class="gr-pass">Geslaagd ’' + r.j.slice(2) + '</span>';
+    card.style.transform = 'rotateY(' + (i*step) + 'deg) translateZ(' + R + 'px)';
+    ring.appendChild(card);
+  });
+
+  /* — draai-regie: automatísch, pauze bij hover, sleep om te slingeren — */
+  const BASE_SPEED = 9;          /* graden per seconde */
+  let angle = -step/2;           /* start met een kaart net iets gedraaid */
+  let speed = BASE_SPEED;
+  let hover = false, dragging = false, visible = false;
+  let dragX = 0, dragA = 0, fling = 0;
+
+  arena.addEventListener('pointerenter', () => hover = true);
+  arena.addEventListener('pointerleave', () => hover = false);
+  arena.addEventListener('pointerdown', e => {
+    dragging = true; fling = 0;
+    dragX = e.clientX; dragA = angle;
+    arena.setPointerCapture(e.pointerId);
+  });
+  arena.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const prev = angle;
+    angle = dragA + (e.clientX - dragX) * .35;
+    fling = angle - prev;
+  });
+  const endDrag = () => { dragging = false; };
+  arena.addEventListener('pointerup', endDrag);
+  arena.addEventListener('pointercancel', endDrag);
+
+  /* alleen draaien als de sectie in beeld is */
+  new IntersectionObserver(es => es.forEach(e => visible = e.isIntersecting),
+    {threshold:.1}).observe(arena);
+
+  let lastT = performance.now();
+  function spin(now){
+    requestAnimationFrame(spin);
+    const dt = Math.min(.05, (now - lastT)/1000); lastT = now;
+    if (!visible && !dragging) return;
+
+    if (dragging){
+      /* sleep: hoek wordt direct in pointermove gezet */
+    } else {
+      /* slinger-momentum uit laten doven → dan weer autosnelheid */
+      if (Math.abs(fling) > .02){
+        angle += fling * 8 * dt;
+        fling *= Math.pow(.02, dt);
+      } else {
+        fling = 0;
+        const target = hover ? 0 : BASE_SPEED;
+        speed += (target - speed) * (1 - Math.pow(.02, dt));
+        angle += speed * dt;
+      }
+    }
+    angle = (angle % 360 + 360) % 360;
+    ring.style.transform = 'rotateX(-5deg) rotateY(' + angle.toFixed(2) + 'deg)';
+  }
+  requestAnimationFrame(spin);
+})();
+
+/* ═══════ DASHBOARD-TELLERS ═══════ */
+const fmt = v => Math.round(v).toLocaleString('nl-NL');
+document.querySelectorAll('.count').forEach(el => {
+  const to = parseFloat(el.dataset.to);
+  if (RM){ el.textContent = fmt(to); return; }
+  const o = {v:0};
+  el.textContent = fmt(0);
+  new IntersectionObserver((es, obs) => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    obs.disconnect();
+    gsap.to(o, {v:to, duration:1.7, ease:'power2.out',
+      onUpdate(){ el.textContent = fmt(o.v); }});
+  }), {threshold:.6}).observe(el);
+});
+
+/* Naalden van de pakket-meters */
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) e.target.classList.add('lit');
 }), {threshold:.4});
@@ -732,7 +1047,6 @@ function initThree(){
     innerWidth/innerHeight, .1, 160);
   camera.position.set(6.4, 1.05, -2.6);
 
-  /* — Reflectie-omgeving voor de lak — */
   const pmrem = new THREE.PMREMGenerator(renderer);
   const envScene = new THREE.Scene();
   const panel = (w,h,rgb,pos,rot) => {
@@ -822,7 +1136,6 @@ function initThree(){
     new THREE.MeshBasicMaterial({map:skyTex, side:THREE.BackSide, fog:false}));
   sky.position.y = 22; scene.add(sky);
 
-  /* ══ DE WEG — nat asfalt (versie-1 layout) ══ */
   const road = new THREE.Mesh(new THREE.PlaneGeometry(260,48),
     new THREE.MeshStandardMaterial({map:asphaltTex, color:0xc4c7cd,
       roughness:.28, metalness:.32, envMapIntensity:.8}));
@@ -838,16 +1151,12 @@ function initThree(){
     const d = new THREE.Mesh(new THREE.BoxGeometry(1.5,.022,.16), dashMat);
     d.position.set(-36 + i*4.2, .012, 0); scene.add(d); dashes.push(d);
   }
-  /* grond naast de weg */
   const ground = new THREE.Mesh(new THREE.CircleGeometry(120, 40),
     new THREE.MeshStandardMaterial({color:0x0a0e0a, roughness:1}));
   ground.rotation.x = -Math.PI/2; ground.position.y = -.02; scene.add(ground);
 
-  /* ══ OMGEVING — alles wat meescrolt als één wereld ══
-     scrollers: {obj, wrap} · lantaarns, bomen, gebouwen, skyline.
-     Verre skyline beweegt langzamer = parallax-diepte.        */
-  const scrollers = [];   // volledige snelheid
-  const farScrollers = []; // 0.35× snelheid (diepte)
+  const scrollers = [];
+  const farScrollers = [];
   const addScroll = (obj, wrap, far) =>
     (far ? farScrollers : scrollers).push({obj, wrap});
 
@@ -865,7 +1174,6 @@ function initThree(){
     scene.add(g); addScroll(g, 118.8);
   }});
 
-  /* — Bomen langs de weg — */
   const trunkMat = new THREE.MeshStandardMaterial({color:0x1a140e, roughness:1});
   const leafMats = [0x0e1a10, 0x102014, 0x0d1811].map(c =>
     new THREE.MeshStandardMaterial({color:c, roughness:1, flatShading:true}));
@@ -882,7 +1190,6 @@ function initThree(){
     scene.add(g); addScroll(g, 180);
   }
 
-  /* — Gebouwen met brandende ramen — */
   const winTex = tex(128,256,ctx => {
     ctx.fillStyle = '#0e1116'; ctx.fillRect(0,0,128,256);
     for (let y=14; y<244; y+=22) for (let x=10; x<116; x+=20){
@@ -910,19 +1217,17 @@ function initThree(){
     scene.add(g); addScroll(g, 180);
   }
 
-  /* — Verre skyline: donkere silhouetten, 0.35× snelheid — */
-  const skyMat = new THREE.MeshStandardMaterial({color:0x101218,
+  const silMat = new THREE.MeshStandardMaterial({color:0x101218,
     roughness:1, emissive:0x05070c, emissiveIntensity:.4});
   const silCount = isMobile() ? 8 : 14;
   for (let i=0;i<silCount;i++){
     const side = i%2===0 ? 1 : -1;
     const w = 8 + Math.random()*14, h = 12 + Math.random()*26;
-    const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,w*.8), skyMat);
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,w*.8), silMat);
     m.position.set(-110 + Math.random()*220, h/2 - .5, side*(34 + Math.random()*28));
     scene.add(m); addScroll(m, 220, true);
   }
 
-  /* — Verkeerslicht bij het kruispunt (vaste plek, zoals versie 1) — */
   const tl = {state:'red'};
   {
     const g = new THREE.Group();
@@ -938,7 +1243,9 @@ function initThree(){
     };
     tl.red = mkLamp(3.85,0x3a0f0c);
     tl.green = mkLamp(3.15,0x0a2a10);
-    g.position.set(7.2,0,-3.4); g.rotation.y = .5; scene.add(g);
+    g.position.set(60, 0, -3.4); g.rotation.y = .5;
+    scene.add(g);
+    tl.group = g;
   }
   tl.set = st => {
     tl.state = st;
@@ -946,7 +1253,7 @@ function initThree(){
     tl.green.material.color.set(st==='green' ? 0x2ee56a : 0x0a2a10);
   };
 
-  /* ══ DE AUTO — de gedetailleerde Mercedes C-Klasse ══ */
+  /* ══ DE AUTO ══ */
   const carRoot = new THREE.Group();
   const body = new THREE.Group();
   carRoot.add(body); scene.add(carRoot);
@@ -1078,7 +1385,6 @@ function initThree(){
     L.position.set(-.2,1.81, sd*.012); L.rotation.y = sd*Math.PI/2; body.add(L);
   });
 
-  /* — Wielen — */
   const tireMat = new THREE.MeshStandardMaterial({color:0x0a0a0b, roughness:.95});
   const rimMat  = new THREE.MeshStandardMaterial({color:0x2b2d31, metalness:.95, roughness:.3});
   const discMat = new THREE.MeshStandardMaterial({color:0x9ba0a8, metalness:1, roughness:.35});
@@ -1149,19 +1455,15 @@ function initThree(){
     p.rotation.x = -Math.PI/2; p.position.set(x,.05,z);
     p.scale.set(1,s,1); carRoot.add(p); return p;
   };
-  const pools = {
-    head: [ mkPool(0xffd9a0, 3.4, .55, 1.7), mkPool(0xffd9a0, 3.4, -.55, 1.7) ],
-    brake: mkPool(0xff2a1a, -3.2, 0, 1.5)
-  };
+  const headPools = [ mkPool(0xffd9a0, 3.4, .55, 1.7),
+                      mkPool(0xffd9a0, 3.4, -.55, 1.7) ];
 
   return {renderer, scene, camera, carRoot, body, wheels, steers, dashes,
           scrollers, farScrollers, headMat, drlMat, brakeMat, sigMatL,
-          sigMatR, beams, tl, pools};
+          sigMatR, beams, tl, headPools};
 }
 
-/* ═══════ Regie — exact als versie 1 ═══════ */
-if (three === null){} // (init gebeurt in boot())
-
+/* ═══════ Regie ═══════ */
 function kies(links){
   if (!three || RM){ goTo(links ? '#proefles' : '#rijopleiding'); return; }
   three.tl.set('green');
@@ -1194,7 +1496,7 @@ addEventListener('scroll', () => {
   }
 }, {passive:true});
 
-/* ═══════ Render-loop — demping exact als versie 1 ═══════ */
+/* ═══════ Render-loop ═══════ */
 const CAMKEYS = [
   {p:0.00, pos:[6.4,1.05,-2.6], look:[0,.7,.4]},
   {p:0.13, pos:[-4.2,2.7, 7.0], look:[1,.8,-.6]},
@@ -1229,7 +1531,6 @@ function tick(now){
   const dt = Math.min(.05, (now-last)/1000); last = now; state.t += dt;
   const T = three;
 
-  /* — VERSIE-1 DEMPING, 1-op-1 — */
   state.scrollVel = (scrollY - state.lastY)/Math.max(dt,.001);
   state.lastY = scrollY;
   const target = Math.max(-42, Math.min(42, state.scrollVel*.02)) + state.boost;
@@ -1238,6 +1539,9 @@ function tick(now){
 
   const maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
   const prog = Math.min(1, scrollY/maxScroll);
+
+  /* Verkeerslicht nadert en glijdt voorbij */
+  T.tl.group.position.x = Math.max(-90, 60*(0.19 - prog)/0.19);
 
   const braking = (Math.abs(state.scrollVel) < 60 && Math.abs(state.speed) > 1.5)
                   || (prog > .26 && prog < .42) || (!state.started);
@@ -1254,14 +1558,12 @@ function tick(now){
   const dir = state.turnDir;
   T.sigMatL.emissiveIntensity = (dir === -1 && blink) ? 3.2 : 0;
   T.sigMatR.emissiveIntensity = (dir ===  1 && blink) ? 3.2 : 0;
-  /* Voorwielen sturen mee tijdens de kruispunt-draai */
   const steerA = dir ? dir*-.3 : 0;
   T.steers.forEach(s => s.rotation.y += (steerA - s.rotation.y)*.1);
 
   const wheelSpin = state.speed*dt/.36;
   T.wheels.forEach(w => w.rotation.z -= wheelSpin);
 
-  /* — De wereld schuift: strepen, lantaarns, bomen, gebouwen — */
   T.dashes.forEach(d => { d.position.x -= state.speed*dt;
     if (d.position.x < -38) d.position.x += 75.6; });
   T.scrollers.forEach(s => { s.obj.position.x -= state.speed*dt;
@@ -1269,7 +1571,6 @@ function tick(now){
   T.farScrollers.forEach(s => { s.obj.position.x -= state.speed*dt*.35;
     if (s.obj.position.x < -115) s.obj.position.x += s.wrap; });
 
-  /* — Carrosserie: duiken/remmen/leunen, zoals versie 1 — */
   const accel = (target - state.speed);
   T.body.rotation.z += (Math.max(-.045, Math.min(.045, -accel*.004)) - T.body.rotation.z) * .06;
   T.body.rotation.x += ((dir ? dir*.03 : 0) - T.body.rotation.x) * .07;
@@ -1280,10 +1581,8 @@ function tick(now){
     if (bm.isSpotLight) bm.intensity = state.headLevel*28;
     else bm.material.opacity = state.headLevel*.05;
   });
-  T.pools.head.forEach(m => m.material.opacity = state.headLevel*.3);
-  T.pools.brake.material.opacity = state.brakeT*.36;
+  T.headPools.forEach(m => m.material.opacity = state.headLevel*.22);
 
-  /* — Camera: exact de versie-1 keyframes + demping — */
   const desired = new THREE.Vector3(), look = new THREE.Vector3();
   camAt(prog, desired, look);
   desired.x -= state.speed*.03;
@@ -1293,7 +1592,6 @@ function tick(now){
   T.camera.position.copy(state.camPos);
   T.camera.lookAt(state.camLook);
 
-  /* — Idle-skip: stilstaan + muis stil → niet renderen — */
   const mouseIdle = (now - state.lastPointer) > 1500;
   const idle = Math.abs(state.speed) < .06 && dir === 0
     && state.boost < .1
@@ -1312,7 +1610,7 @@ function tick(now){
   }
 }
 
-/* ═══════ Opstart: eerst content, dan 3D (fade-in) ═══════ */
+/* ═══════ Opstart ═══════ */
 function boot(){
   try { three = initThree(); }
   catch(err){
@@ -1344,6 +1642,7 @@ function boot(){
     three.headMat.emissiveIntensity = 3.2;
     three.drlMat.emissiveIntensity = 2.9;
     document.getElementById('hud').classList.add('on');
+    three.tl.group.position.x = -90;
     const render = () => three.renderer.render(three.scene, three.camera);
     render();
     document.getElementById('stage').classList.add('ready');
