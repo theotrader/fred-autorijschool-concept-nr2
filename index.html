@@ -225,9 +225,9 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
 
 /* ═════════════════════════════════════════════════
    GOOGLE REVIEWS — 3D-carrousel in donker paneel
-   Draait op ALLE schermen (ook mobiel): de arena heeft
-   een clip-kader (overflow:hidden) zodat de zijkanten
-   netjes worden afgesneden i.p.v. de pagina verbreden.
+   Op mobiel wordt de hele ring uitgeschaald, zodat de
+   voorkaart ±2/3 breedte krijgt en de ZIJ-kaarten
+   zichtbaar inpiepen — dát maakt de 3D zichtbaar.
    ═════════════════════════════════════════════════ */
 .g-reviews{margin-top:clamp(50px,7vw,90px)}
 .gr-box{background:rgba(13,15,20,.72);border:1px solid var(--line);
@@ -292,6 +292,16 @@ nav.scrolled{background:rgba(11,12,15,.86);border-color:var(--line);backdrop-fil
   display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .gr-arena.static .gr-card{position:relative;inset:auto;
   transform:none!important;box-shadow:none}
+/* ══ MOBIEL: de hele ring uitschalen zodat je de 3D-diepte
+   ziet — voorkaart ±2/3 breed, zijkaarten piepen in ══ */
+@media(max-width:719px){
+  .gr-scalewrap{height:240px}
+  .gr-arena{height:240px;transform:scale(.62)}
+}
+@media(max-width:400px){
+  .gr-scalewrap{height:210px}
+  .gr-arena{height:210px;transform:scale(.55)}
+}
 @media(max-width:560px){
   .gr-arena.static{grid-template-columns:1fr}
 }
@@ -882,13 +892,12 @@ const hIO = new IntersectionObserver(es => es.forEach(e => {
 document.querySelectorAll('h1, h2').forEach(h => hIO.observe(h));
 
 /* ═══════════════════════════════════════════════════════════
-   GOOGLE REVIEWS — 3D-CARROUSSEL (DRAAIT OP ALLE SCHERMEN)
-   De ring wordt nu óók op mobiel gebouwd.  De breedte-uit-
-   stoot wordt opgevangen door een clip-kader (overflow:
-   hidden) rond de arena: de voorkaart past volledig op een
-   telefoon, de zij-kaarten schuiven buiten beeld en worden
-   afgesneden.  Aanraken/slepen slingert de ring; verticaal
-   scrollen blijft gewoon werken (touch-action:pan-y).
+   GOOGLE REVIEWS — 3D-CARROUSSEL
+   Desktop: volledige grootte.  Mobiel: de arena is via CSS
+   uitgeschaald (scale .62 / .55), waardoor de voorkaart ±2/3
+   van de breedte krijgt en de zij-kaarten zichtbaar inpiepen
+   — de 3D-diepte is dan óók op een telefoon te zien.
+   Drag-snelheid wordt gecorrigeerd voor die schaal.
    ═══════════════════════════════════════════════════════════ */
 (function buildReviewCarousel(){
   const arena = document.getElementById('grArena');
@@ -945,6 +954,13 @@ document.querySelectorAll('h1, h2').forEach(h => hIO.observe(h));
   let hover = false, dragging = false, visible = false;
   let dragX = 0, dragA = 0, fling = 0;
 
+  /* huidige CSS-schaal van de arena meten (mobiel < 1),
+     zodat vinger-slepen hetzelfde voelt als op desktop */
+  const arenaScale = () => {
+    const rc = arena.getBoundingClientRect();
+    return (rc.width && arena.offsetWidth) ? rc.width / arena.offsetWidth : 1;
+  };
+
   arena.addEventListener('pointerenter', () => hover = true);
   arena.addEventListener('pointerleave', () => hover = false);
   arena.addEventListener('pointerdown', e => {
@@ -955,7 +971,8 @@ document.querySelectorAll('h1, h2').forEach(h => hIO.observe(h));
   arena.addEventListener('pointermove', e => {
     if (!dragging) return;
     const prev = angle;
-    angle = dragA + (e.clientX - dragX) * .35;
+    const s = arenaScale();
+    angle = dragA + (e.clientX - dragX) * .35 / s;
     fling = angle - prev;
   });
   const endDrag = () => { dragging = false; };
